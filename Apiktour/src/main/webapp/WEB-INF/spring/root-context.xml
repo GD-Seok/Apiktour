@@ -7,10 +7,10 @@
 	<!-- 등록해서 공통으로 사용할 파일 등록 -->
 	<!-- 1./WEB-INF/jdbc.properties -->
 	<bean id="propertyConfigurer"
-		class="org.springframework.beans.factory.config.PropertyPlaceholerConfigurer">
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>../WEB-INF/views/dbinfo/jdbc.properties</value>
+				<value>/../WEB-INF/views/dbinfo/jdbc.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -34,6 +34,10 @@
 	<!-- 4.SqlSessionTemplate(sqlSession 객체를 더 쉽게 얻어오기 위해서 설정) -->
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="personDAO" class="com.apik.tour.person.service.PersonDaoImpl">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 	
 
