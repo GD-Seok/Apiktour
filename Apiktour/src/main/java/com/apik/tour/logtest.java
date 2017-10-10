@@ -3,6 +3,7 @@ package com.apik.tour;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+//logback을 설정하는 파일입니다.
 /**
  * This is a Java console app that you can execute within your IDE for visual
  * confirmation that the SLF4J system is appending to console and/or file as
