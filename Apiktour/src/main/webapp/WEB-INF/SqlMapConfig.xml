@@ -6,7 +6,7 @@
  <configuration>
  	<!-- typeAliases 생략 가능 -->
  	<typeAliases>
- 		<typeAlias type="com.apik.tour.person.command.PersonCommand" alias="PersonDto"/>
+ 		<typeAlias type="com.apik.tour.person.command.PersonCommand" alias="personDto"/>
  	</typeAliases>
  	
  	<!-- mappers 필수 (어떤 table을 불러와라) 
