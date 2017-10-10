@@ -10,7 +10,7 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholerConfigurer">
 		<property name="locations">
 			<list>
-				<value>WEB-INF/views/dbinfo/dborcal.properties</value>
+				<value>../WEB-INF/views/dbinfo/jdbc.properties</value>
 			</list>
 		</property>
 	</bean>
