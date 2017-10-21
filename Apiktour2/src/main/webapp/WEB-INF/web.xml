@@ -7,8 +7,8 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 
     <display-name>Apiktour2</display-name>
     
-    <!-- mybatis 를 통한 외부 DB설정 파일 등록 -->
-	   <context-param>
+    <!-- mybatis 를 통한 외부 DB설정정보가 들어있는 파일 등록 -->
+<!-- 	   <context-param>
 	     <param-name>contextConfigLocation</param-name>
 	     <param-value>classpath:config/applicationContext.xml</param-value>
 	  </context-param>
@@ -16,7 +16,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	     <listener-class>
 	         org.springframework.web.context.ContextLoaderListener
 	     </listener-class>
-	  </listener>
+	  </listener> -->
     
         
     

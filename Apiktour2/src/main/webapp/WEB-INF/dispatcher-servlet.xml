@@ -8,8 +8,17 @@
 	<context:annotation-config />
 
 	<!--요청클래스를 등록 -->
-	<bean class="com.apik.admin.admin_m_up_Controller" />
 	<bean class="com.apik.admin.admin_main_Controller" />
+	<bean class="com.apik.admin.admin_m_up_Controller"/>
+	<bean class="com.apik.admin.admin_m_in_Controller"/>
+	<bean class="com.apik.admin.admin_m_de_Controller"/>
+	<bean class="com.apik.admin.admin_m_se_Controller"/>
+	
+	<!-- person 등록 
+	<bean class="com.apik.person.command.PersonCommand"/>
+	<bean class="com.apik.person.service.PersonDaoImpl"/>
+	<bean class="com.apik.person.service.InsertpersonController"/>
+	-->
 
 
 	    <!-- tiles에 관련된 환경설정을 불러오기 (일반 xml보다 viewResolver가 조금 변환됨) 

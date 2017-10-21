@@ -5,10 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css"
-	href="../../web/css/comm/common.css">
-<link rel="stylesheet" type="text/css" href="../css/test.css">
-<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<link rel="stylesheet" type="text/css" href="/../../admin/css/admin.css" />
+<tiles:insertAttribute name="css"/>
 <title><tiles:insertAttribute name="title"/></title>
 </head>
 <body>
@@ -21,10 +19,10 @@
 				<li class="active"><a href="#"><span>회원 관리 메뉴</span><span
 						class="i"></span></a>
 					<ul style="display: block;">
-						<li><a href="#"><span>회원 목록</span></a></li>
-						<li><a href="05_admin_m_up.do"><span>회원 등록</span></a></li>
-						<li><a href="#"><span>회원 수정</span></a></li>
-						<li><a href="#"><span>회원 삭제</span></a></li>
+						<li><a href="05_admin_m_se.do"><span>회원 목록</span></a></li>
+						<li><a href="05_admin_m_in.do"><span>회원 등록</span></a></li>
+						<li><a href="05_admin_m_up.do"><span>회원 수정</span></a></li>
+						<li><a href="05_admin_m_de.do"><span>회원 삭제</span></a></li>
 					</ul></li>
 				<li><a href="#"><span>코스 관리 메뉴</span><span class="i"></span></a>
 					<ul style="display: none;">
@@ -60,5 +58,5 @@
 </body>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="../js/admin.js"></script>
+<tiles:insertAttribute name="js"/>
 </html>

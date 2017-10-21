@@ -16,12 +16,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listperson" resultType="personDto">
 		select * from person order by id desc
 	</select>
+	
+	<!-- 회원 로그인 확인 , id가 있을 경우, 1반환, 없을경우 0 반환-->
+	<select id="loginperson">
+		select count(id) from person where id={#id}
+	</select>
+	
 	<!-- 회원등록 -->
-	<insert id="" parameterType="">
-		insert into person value()
+	<insert id="insertperson" parameterType="personDto">
+		insert into person values(#{id},#{passwd},#{name},#{gender},#{age})
 	</insert>
+	
 	<!-- 회원 수정 -->
+	<update id="updateperson" parameterType="personDto">
+		update person set id=#{id},name=#{name},gender=#{gender},age=#{age} where id=#{id}
+	</update>
+	<!-- 회원 비밀번호 변경 -->
+	<update id="updatepersonpasswd" parameterType="String">
+		update person set passwd=#{passwd} where id=#{id}
+	</update>
+	
 	<!-- 회원 삭제 -->
+	<delete id="deleteperson" parameterType="String">
+		delete from person where id=#{id}
+	</delete>
 
 
 </mapper>

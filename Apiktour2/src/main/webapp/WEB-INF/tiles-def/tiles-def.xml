@@ -5,14 +5,36 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="admin" template="/WEB-INF/views/template/AdminMain.jsp">
+	<definition name="admin" template="/WEB-INF/views/admin/template/AdminMain.jsp">
 		<put-attribute name="title" value="관리 페이지"/>
-		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+		<put-attribute name="header" value="/WEB-INF/views/admin/template/header.jsp"/>
 		<put-attribute name="content" value="이 부분이 바뀝니다."/>
-		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>  
+		<put-attribute name="footer" value="/WEB-INF/views/admin/template/footer.jsp"/>
+		<put-attribute name="js" value="/WEB-INF/views/admin/js/adminjs.jsp"/>
+		<put-attribute name="css" value="/WEB-INF/views/admin/css/admincss.jsp"/>  
 	</definition>
-	<definition name="member" extends="admin">
+	<definition name="updatemember" extends="admin">
+		<put-attribute name="title" value="회원 수정 페이지"/>
+		<put-attribute name="content" value="/WEB-INF/views/admin/jsp/member/05_admin_m_up.jsp"/>
+		<put-attribute name="js" value=""/>
+		<put-attribute name="css" value=""/>		
+	</definition>
+	<definition name="insertmember" extends="admin">
 		<put-attribute name="title" value="회원 등록 페이지"/>
-		<put-attribute name="content" value="/WEB-INF/views/jsp/05_admin_m_up.jsp"/>		
+		<put-attribute name="content" value="/WEB-INF/views/admin/jsp/member/05_admin_m_in.jsp"/>
+		<put-attribute name="js" value=""/>
+		<put-attribute name="css" value=""/>		
+	</definition>
+	<definition name="deletemember" extends="admin">
+		<put-attribute name="title" value="회원 삭제] 페이지"/>
+		<put-attribute name="content" value="/WEB-INF/views/admin/jsp/member/05_admin_m_de.jsp"/>
+		<put-attribute name="js" value=""/>
+		<put-attribute name="css" value=""/>		
+	</definition>
+	<definition name="selectmember" extends="admin">
+		<put-attribute name="title" value="회원 검색 페이지"/>
+		<put-attribute name="content" value="/WEB-INF/views/admin/jsp/member/05_admin_m_se.jsp"/>
+		<put-attribute name="js" value=""/>
+		<put-attribute name="css" value=""/>		
 	</definition>
 </tiles-definitions>

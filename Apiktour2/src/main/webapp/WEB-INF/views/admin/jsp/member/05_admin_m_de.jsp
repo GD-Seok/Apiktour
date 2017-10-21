@@ -6,7 +6,7 @@
 <title>회원가입</title>
 <link rel="stylesheet" type="text/css" href="../../web/css/comm/common.css">
 <link rel="stylesheet" type="text/css" href="../../css/member.css" >
-<script language="JavaScript" src="../../js/member_in.js"></script>
+
 </head>
 <body onLoad="regForm.id.focus()">
 	<br>
@@ -17,13 +17,12 @@
 				<table border="1" cellspacing="0" cellpadding="2" align="center">
 					<form name="regForm" method="post" action="PersonInsert.jsp">
 						<tr align="center" bgcolor="#996600">
-							<td colspan="3"><font color="#FFFFFF"><b>
-							회원 수정 페이지</b></font></td>
+							<td colspan="3"><font color="#FFFFFF"><b>회원 삭제 페이지</b></font></td>
 						</tr>
 						<tr>
-							<td width="16%">수정할 아이디(이메일)</td>
+							<td width="16%">등록할 아이디(이메일)</td>
 							<td width="57%"><input type="text" name="id" size="15">
-								<input type="button" value="ID존재유무"
+								<input type="button" value="ID중복확인"
 								onClick="idCheck(this.form.id.value)"></td>
 							<td width="27%">아이디를 적어 주세요.</td>
 						</tr>
@@ -64,7 +63,7 @@
 					</tr>
 					<tr>
 						<td colspan="3" align="center"><input type="button"
-							value="회원등록" onclick="inputCheck()"> &nbsp; &nbsp; &nbsp;
+							value="회원삭제" onclick="inputCheck()"> &nbsp; &nbsp; &nbsp;
 							&nbsp; &nbsp; &nbsp; <input type="reset" value="다시쓰기"></td>
 					</tr>
 					</form>
