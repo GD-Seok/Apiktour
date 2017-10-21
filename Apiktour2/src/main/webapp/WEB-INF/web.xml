@@ -5,7 +5,7 @@
 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
 
-    <display-name>SpringTiles</display-name>
+    <display-name>Apiktour2</display-name>
     
     <!--
        스프링에서 web.xml에서 환경설정
