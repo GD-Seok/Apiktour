@@ -22,46 +22,26 @@
 							<td colspan="3"><font color="#FFFFFF"><b>회원 검색 페이지</b></font></td>
 						</tr>
 						<tr>
-							<td width="16%">등록할 아이디(이메일)</td>
+							<td width="16%">검색할 아이디(이메일)</td>
 							<td width="57%"><input type="text" name="id" size="15">
 								<input type="button" value="ID로 회원정보 검색"
 								onClick="idCheck(this.form.id.value)"></td>
 							<td width="27%">검색할 아이디를 적어 주세요.</td>
-						</tr>
-						<tr>
-							<td>패스워드</td>
-							<td><input type="text" name="passwd" size="15" readonly="readonly">
-							</td>
-							<td>패스워드를 적어주세요.</td>
-						</tr>						
+						</tr>				
 						<tr>
 							<td>이름</td>
-							<td><input type="text" name="name" size="15"></td>
-							<td>이름을 적어주세요.(가명도 가능합니다.)</td>
+							<td><input type="text" name="name" size="15" readonly="readonly"></td>
+							<td>이름을 보여줍니다.(가명도 가능합니다.)</td>
 						</tr>
 						<tr>
 							<td>성별</td>
-							<td><select name="gender">
-									<option value="M">남자</option>
-									<option value="W">여자</option>
-							</select></td>
+							<td><input type="text" name="gender" size="15" readonly="readonly"></td>
 							<td>성별을 선택 하세요.</td>
 						</tr>
 					<tr>
 						<td>나이</td>
-						<td><select name="age">
-								<option value="0">선택하세요.</option>
-								<option value="10">10대</option>
-								<option value="20">20대</option>
-								<option value="30">30대</option>
-								<option value="40">40대</option>
-								<option value="50">50대</option>
-								<option value="60">60대</option>
-								<option value="70">70대</option>
-								<option value="80">80대</option>
-								<option value="90">90대</option>
-						</select></td>
-						<td>나이을 선택 하세요.</td>
+						<td><input type="text" name="age" size="15" readonly="readonly"></td>
+						<td>나이를 보여줍니다.</td>
 					</tr>
 					<tr>
 						<td colspan="3" align="center"><input type="button"

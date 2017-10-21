@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="/../../admin/css/admin.css" />
-<tiles:insertAttribute name="css"/>
 <title><tiles:insertAttribute name="title"/></title>
+<tiles:insertAttribute name="css"/>
+<link rel="stylesheet" type="text/css" href="/WEB-INF/views/admin/template/admin.css">
 </head>
 <body>
 	<header class="header"><tiles:insertAttribute name="header"/></header>
