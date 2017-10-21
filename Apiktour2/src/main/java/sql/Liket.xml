@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper>
+<mapper namespace="liket">
 	<!-- id (f)           VARCHAR(50)    Email
 		   cosnum (f)  Integer(3)          회원이 찜한 목록 번호
 		   day             DATE                  회원이 찜한 날짜

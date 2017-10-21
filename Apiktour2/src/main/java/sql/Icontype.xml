@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper>
+ <mapper namespace="icontype">
  	<!--
  		loctype    VARCHAR(10)      장소 타입 ("A001","A002") Icon 적용 시킬때 구분 인자로 사용
  		type        VARCHAR(30)      카페, 박물관, 산 등등 타입 설명 
