@@ -7,10 +7,8 @@
 		<tr>
 			<td align="center">
 				<select name="keyField">
-					<option value="title">제목</option>
-					<option value="writer">이름</option>
-					<option value="content">내용</option>
-					<option value="all">전체</option>
+					<option value="locnum">id</option>
+					<option value="locname">장소명</option>
 				</select>
 			</td>
 			<td>
@@ -30,11 +28,11 @@
 	</tr>
 	
 	<tr bgcolor="#F3F3F3">
-		<td width="50">번호</td>
-		<td>제목</td>
-		<td width="70">글쓴이</td>
-		<td width="100">날짜</td>
-		<td width="70">조회수</td>
+		<td width="50">id</td>
+		<td width="100">장소명</td>
+		<td width="70">경도 값</td>
+		<td width="100">위도 값</td>
+		<td width="70">장소 타입</td>
 	</tr>
 	<!-- 데이터의 유무에 따라서 -->
 	<c:if test="${count==0}">

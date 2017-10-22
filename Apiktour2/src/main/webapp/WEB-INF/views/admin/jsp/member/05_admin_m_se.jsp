@@ -1,57 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>회원가입</title>
-<link rel="stylesheet" type="text/css" href="../../web/css/comm/common.css">
-<link rel="stylesheet" type="text/css" href="../../css/member.css" >
-
-</head>
-<body onLoad="regForm.id.focus()">
-	<br>
-	<br>
-	<table class="container">
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false" %>
+<form action="list.do" name="search" method="get" onsubmit="return searchCheck()">
+	<table align="center" width="200" border="0" cellspacing="0" cellpagging="2">
 		<tr>
-			<td align="center" valign="middle" bgcolor="#FFFFCC">
-				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="#">
-						<tr align="center" bgcolor="#996600">
-							<td colspan="3"><font color="#FFFFFF"><b>회원 검색 페이지</b></font></td>
-						</tr>
-						<tr>
-							<td width="16%">검색할 아이디(이메일)</td>
-							<td width="57%"><input type="text" name="id" size="15">
-								<input type="button" value="ID로 회원정보 검색"
-								onClick="idCheck(this.form.id.value)"></td>
-							<td width="27%">검색할 아이디를 적어 주세요.</td>
-						</tr>				
-						<tr>
-							<td>이름</td>
-							<td><input type="text" name="name" size="15" readonly="readonly"></td>
-							<td>이름을 보여줍니다.(가명도 가능합니다.)</td>
-						</tr>
-						<tr>
-							<td>성별</td>
-							<td><input type="text" name="gender" size="15" readonly="readonly"></td>
-							<td>성별을 선택 하세요.</td>
-						</tr>
-					<tr>
-						<td>나이</td>
-						<td><input type="text" name="age" size="15" readonly="readonly"></td>
-						<td>나이를 보여줍니다.</td>
-					</tr>
-					<tr>
-						<td colspan="3" align="center"><input type="button"
-							value="회원검색" onclick="#"> &nbsp; &nbsp; &nbsp;
-							&nbsp; &nbsp; &nbsp; <input type="reset" value="다시쓰기"></td>
-					</tr>
-					</form>
-				</table>
+			<td align="center">
+				<select name="keyField">
+					<option value="id">id</option>
+					<option value="name">회원명</option>
+					<option value="gender">성별</option>
+					<option value="age">나이</option>
+				</select>
+			</td>
+			<td>
+				<input type="text" size="16" name="keyWord">
+			</td>
+			<td>
+				<input type="submit" value="찾기">
 			</td>
 		</tr>
 	</table>
-</body>
-</html>
+</form>
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+	<tr>
+		<td align="right" colspan="5" >
+			<input type = "button" value="글쓰기" onclick="location.href='write.do'">
+		</td>
+	</tr>
+	
+	<tr bgcolor="#F3F3F3">
+		<td width="50">아이디</td>
+		<td width="70">회원명</td>
+		<td width="50">성별</td>		
+		<td width="70">나이</td>
+	</tr>
+	<!-- 데이터의 유무에 따라서 -->
+	<c:if test="${count==0}">
+		<tr>
+			<td colspan="5" align="center">등록된 회원이 없습니다.</td>
+		</tr>
+	</c:if>
+	<c:forEach var="article" items="${list}">	
+		<tr>
+			<td align="center">${article.seq}</td>
+			<td><a href="detail.do?seq=${article.seq }">${article.title }</a></td>
+			<td>${article.writer }</td>
+			<td>${article.regdate }</td>
+			<td>${article.hit }</td>
+		</tr>
+	</c:forEach>
+	
+	<tr>
+		<td align="center" colspan="5">${pagingHtml }</td>
+	</tr>
+</table>
