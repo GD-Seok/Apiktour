@@ -25,7 +25,7 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="2">
 	<tr>
 		<td align="right" colspan="5" >
-			<input type = "button" value="글쓰기" onclick="location.href='write.do'">
+			<input type = "button" value="회원 등록" onclick="location.href='write.do'">
 		</td>
 	</tr>
 	
