@@ -13,7 +13,7 @@
 		<tr>
 			<td align="center" valign="middle" bgcolor="#FFFFCC">
 				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="mapInsert.jsp">
+					<form name="regForm" method="post" action="iconInsert.jsp">
 						<tr align="center" bgcolor="#996600">
 							<td colspan="3"><font color="#FFFFFF"><b>장소 Type 등록
 										페이지</b></font></td>
@@ -21,7 +21,7 @@
 						<tr>
 							<td width="16%">등록할 장소 Type 값</td>
 							<td width="57%"><input type="text" name="loctype" size="15">
-								<input type="button" value=" 자동등록"
+								<input type="button" value="중복 체크 "
 								onClick="idCheck(this.form.id.value)"></td>
 							<td width="27%">장소 Type (ex) "A001", "A002")</td>
 						</tr>					

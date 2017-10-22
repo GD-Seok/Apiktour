@@ -8,7 +8,7 @@ public class admin_m_in_Controller {
 	
 	@RequestMapping("/05_admin_m_in.do")
 	public String process() {
-		return "insertmember";
+		return "member/05_admin_m_in.move";
 	}
 
 }

@@ -8,11 +8,24 @@
 	<context:annotation-config />
 
 	<!--요청클래스를 등록 -->
-	<bean class="com.apik.admin.admin_main_Controller" />
-	<bean class="com.apik.admin.admin_m_up_Controller"/>
-	<bean class="com.apik.admin.admin_m_in_Controller"/>
-	<bean class="com.apik.admin.admin_m_de_Controller"/>
+	
+	<!-- 관리자 메인 페이지 -->
+	<bean class="com.apik.admin.admin_main_Controller" />	
+	<!-- cos 관리 페이지 -->
+	<bean class="com.apik.admin.admin_cos_se_Controller"/>
+	<bean class="com.apik.admin.admin_cos_in_Controller"/>
+	<!-- cosloc 관리 페이지 -->
+	<bean class="com.apik.admin.admin_cosloc_se_Controller"/>
+	<bean class="com.apik.admin.admin_cosloc_in_Controller"/>
+	<!-- icon 관리 페이지 -->
+	<bean class="com.apik.admin.admin_icon_se_Controller"/>
+	<bean class="com.apik.admin.admin_icon_in_Controller"/>
+	<!-- member 관리 페이지 -->
 	<bean class="com.apik.admin.admin_m_se_Controller"/>
+	<bean class="com.apik.admin.admin_m_in_Controller"/>	
+	<!-- map 관리 페이지 -->
+	<bean class="com.apik.admin.admin_map_se_Controller"/>
+	<bean class="com.apik.admin.admin_map_in_Controller"/>
 	
 	<!-- person 등록 
 	<bean class="com.apik.person.command.PersonCommand"/>

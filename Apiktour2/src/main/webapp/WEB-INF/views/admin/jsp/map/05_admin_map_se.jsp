@@ -1,62 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>지도 관리</title>
-
-</head>
-<body onLoad="regForm.id.focus()">
-	<br>
-	<br>
-	<table class="container">
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false" %>
+<form action="list.do" name="search" method="get" onsubmit="return searchCheck()">
+	<table align="center" width="200" border="0" cellspacing="0" cellpagging="2">
 		<tr>
-			<td align="center" valign="middle" bgcolor="#FFFFCC">
-				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="mapInsert.jsp">
-						<tr align="center" bgcolor="#996600">
-							<td colspan="3"><font color="#FFFFFF"><b>지도 검색
-										페이지</b></font></td>
-						</tr>
-						<tr>
-							<td width="16%">검색할 지도 id 값</td>
-							<td width="57%"><input type="text" name="locnum" size="15">
-								<input type="button" value="지도 id 검색"
-								onClick="idCheck(this.form.id.value)"></td>
-							<td width="27%">지도 id를 검색합니다.</td>
-						</tr>
-						<tr>
-							<td>장소명</td>
-							<td><input type="text" name="locname" size="15">
-							</td>
-							<td>장소명을 보여줍니다.</td>
-						</tr>
-						<tr>
-							<td>경도 값</td>
-							<td><input type="text" name="locationx" size="15" readonly="readonly">
-							</td>
-							<td>경도 값을 보여줍니다.</td>
-						</tr>
-						<tr>
-							<td>위도 값</td>
-							<td><input type="text" name="locationy" size="15" readonly="readonly">
-							</td>
-							<td>위도 값을 보여줍니다..</td>
-						</tr>						
-						<tr>
-							<td>(선택사항) 장소 type</td>
-							<td><input type="text" name="loctype" size="15" readonly="readonly"></td>
-							<td>장소 타입을 보여줍니다.</td>
-						</tr>						
-					<tr>
-						<td colspan="3" align="center"><input type="button"
-							value="지도검색" onclick="inputCheck()"> &nbsp; &nbsp; &nbsp;
-							&nbsp; &nbsp; &nbsp; <input type="reset" value="다시쓰기"></td>
-					</tr>
-					</form>
-				</table>
+			<td align="center">
+				<select name="keyField">
+					<option value="title">제목</option>
+					<option value="writer">이름</option>
+					<option value="content">내용</option>
+					<option value="all">전체</option>
+				</select>
+			</td>
+			<td>
+				<input type="text" size="16" name="keyWord">
+			</td>
+			<td>
+				<input type="submit" value="찾기">
 			</td>
 		</tr>
 	</table>
-</body>
-</html>
+</form>
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+	<tr>
+		<td align="right" colspan="5" >
+			<input type = "button" value="글쓰기" onclick="location.href='write.do'">
+		</td>
+	</tr>
+	
+	<tr bgcolor="#F3F3F3">
+		<td width="50">번호</td>
+		<td>제목</td>
+		<td width="70">글쓴이</td>
+		<td width="100">날짜</td>
+		<td width="70">조회수</td>
+	</tr>
+	<!-- 데이터의 유무에 따라서 -->
+	<c:if test="${count==0}">
+		<tr>
+			<td colspan="5" align="center">등록된 게시물이 없습니다.</td>
+		</tr>
+	</c:if>
+	<c:forEach var="article" items="${list}">	
+		<tr>
+			<td align="center">${article.seq}</td>
+			<td><a href="detail.do?seq=${article.seq }">${article.title }</a></td>
+			<td>${article.writer }</td>
+			<td>${article.regdate }</td>
+			<td>${article.hit }</td>
+		</tr>
+	</c:forEach>
+	
+	<tr>
+		<td align="center" colspan="5">${pagingHtml }</td>
+	</tr>
+</table>
