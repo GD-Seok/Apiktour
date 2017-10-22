@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 
 		locnum     Integer(3)          지도 id값 (1~999)
  		locname   VARCHAR(40)     장소명(한글 20글자)
- 		locationx  Integer(9.6)        경도값(###.######)
- 		locationy  Integer(9.6)        위도값(###.######)
+ 		locationx  double(9,6)        경도값(###.######)
+ 		locationy  double(9,6)        위도값(###.######)
  		loctype (f) VARCHAR(10)    장소 type값   
 	 -->
 
