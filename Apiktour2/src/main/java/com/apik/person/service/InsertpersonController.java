@@ -23,7 +23,7 @@ public class InsertpersonController {
 			try {
 				personDao.insertperson(personDto);
 			}catch(Exception e){e.printStackTrace();}
-			return "member";
+			return "member/05_admin_m_se.move";
 		}
 		
 

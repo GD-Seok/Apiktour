@@ -41,13 +41,12 @@
 			<td colspan="5" align="center">등록된 회원이 없습니다.</td>
 		</tr>
 	</c:if>
-	<c:forEach var="article" items="${list}">	
+	<c:forEach var="article" items="${listperson}">	
 		<tr>
-			<td align="center">${article.seq}</td>
-			<td><a href="detail.do?seq=${article.seq }">${article.title }</a></td>
-			<td>${article.writer }</td>
-			<td>${article.regdate }</td>
-			<td>${article.hit }</td>
+			<td align="center">${article.id}</td>			
+			<td>${article.name }</td>
+			<td>${article.gender }</td>
+			<td>${article.age }</td>
 		</tr>
 	</c:forEach>
 	

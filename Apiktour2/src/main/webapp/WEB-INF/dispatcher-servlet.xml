@@ -21,18 +21,35 @@
 	<bean class="com.apik.admin.admin_icon_se_Controller"/>
 	<bean class="com.apik.admin.admin_icon_in_Controller"/>
 	<!-- member 관리 페이지 -->
-	<bean class="com.apik.admin.admin_m_se_Controller"/>
+	<!-- <bean class="com.apik.admin.admin_m_se_Controller"/> -->
 	<bean class="com.apik.admin.admin_m_in_Controller"/>	
 	<!-- map 관리 페이지 -->
 	<bean class="com.apik.admin.admin_map_se_Controller"/>
 	<bean class="com.apik.admin.admin_map_in_Controller"/>
 	
-	<!-- person 등록 
-	<bean class="com.apik.person.command.PersonCommand"/>
+	<!-- person 등록 --> 
 	<bean class="com.apik.person.service.PersonDaoImpl"/>
 	<bean class="com.apik.person.service.InsertpersonController"/>
-	-->
+	<bean class="com.apik.person.service.ListpersonController"/>
 
+	<!-- 리소스 번들을 이용해서 처리 -->
+    <bean id="messageSource" 
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>messages.label</value>
+                <value>messages.validation</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 예외 페이지 작성 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.Exception">pageError</prop>
+            </props>
+        </property>
+    </bean>
 
 	    <!-- tiles에 관련된 환경설정을 불러오기 (일반 xml보다 viewResolver가 조금 변환됨) 
         기존의 prefix,suffix를 이용해서 경로명 및 파일의 확장자를 지정하는 부분이 없어졌다.

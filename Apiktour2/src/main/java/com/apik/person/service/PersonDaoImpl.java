@@ -15,13 +15,14 @@ public class PersonDaoImpl extends SqlSessionDaoSupport implements PersonDAO {
 	@Override
 	public List<PersonCommand> listperson(Map<String, Object> map) {
 		// TODO Auto-generated method stub
-		return null;
+		List<PersonCommand> listperson=getSqlSession().selectList("listperson",map);
+		return listperson;
 	}
 	//검색시 필요한 페이징 처리
 	@Override
 	public int getRowCount(Map<String, Object> map) {
 		// TODO Auto-generated method stub
-		return 0;
+		return getSqlSession().selectOne("selectCount", map);
 	}
 	
 	//회원 등록

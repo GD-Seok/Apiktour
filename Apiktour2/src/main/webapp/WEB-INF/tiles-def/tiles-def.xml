@@ -5,6 +5,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+	<!-- 관리자 페이지  -->
 	<definition name="admin" template="/WEB-INF/views/admin/template/layout.jsp">
 		<put-attribute name="title" value="관리 페이지"/>
 		<put-attribute name="menu" value="/WEB-INF/views/admin/template/menu.jsp"/>
@@ -12,13 +13,19 @@
 		<put-attribute name="content" value="이 부분이 바뀝니다."/>
 		<put-attribute name="footer" value="/WEB-INF/views/admin/template/footer.jsp"/>
 		
-		<put-attribute name="css" value="/WEB-INF/views/admin/css/admincss.jsp"/>
-		<put-attribute name="js" value="/WEB-INF/views/admin/js/adminjs.jsp"/>  
+		<put-attribute name="css" value="/WEB-INF/views/admin/script/boardDefaultCss.jsp"/>
+		<put-attribute name="js" value="/WEB-INF/views/admin/script/boardSearchJs.jsp"/>  
 	</definition>
 	<definition name="*/*.move" extends="admin">
 		<put-attribute name="content" value="/WEB-INF/views/admin/jsp/{1}/{2}.jsp"/>
-		<put-attribute name="js" value=""/>
-		<put-attribute name="css" value=""/>		
+		<put-attribute name="js" value=""/>		
 	</definition>
+	
+	<!-- 에러 페이지 처리 -->
+	<definition name="pageError" extends="admin">
+        <put-attribute name="title" value="에러 페이지"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/jsp/error/pageError.jsp"/>
+        <put-attribute name="js" value=""/>
+    </definition>
 	
 </tiles-definitions>
