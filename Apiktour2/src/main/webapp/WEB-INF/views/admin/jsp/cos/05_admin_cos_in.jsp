@@ -54,7 +54,7 @@
 					</tr>
 					<tr>
 						<td>소개글</td>
-						<td><textarea name="intro"></textarea></td>
+						<td><textarea name="intro" rows="5" cols="50"></textarea></td>
 						<td>장소에대한 간략한 소개글을 작성해주세요</td>
 					</tr>
 					<tr>

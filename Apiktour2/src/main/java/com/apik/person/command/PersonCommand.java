@@ -1,8 +1,8 @@
 package com.apik.person.command;
 
 public class PersonCommand {
-	String id,passwd,name,gender;
-	int age;
+	private String id,passwd,name,gender;
+	private int age;
 	
 	public String getId() {
 		return id;
@@ -34,4 +34,6 @@ public class PersonCommand {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	
 }
