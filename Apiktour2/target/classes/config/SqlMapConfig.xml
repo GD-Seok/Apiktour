@@ -3,6 +3,11 @@
  "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
  <configuration>
  	<typeAliases>
+ 		<typeAlias type="com.apik.cosloc.command" alias="coslocDto"/>
+ 		<typeAlias type="com.apik.course.command" alias="courseDto"/>
+ 		<typeAlias type="com.apik.icontype.command" alias="icontypeDto"/>
+ 		<typeAlias type="com.apik.liket.command" alias="liketDto"/>
+ 		<typeAlias type="com.apik.map.command" alias="mapDto"/>
  		<typeAlias type="com.apik.person.command" alias="personDto"/>
  	</typeAliases>
  	
