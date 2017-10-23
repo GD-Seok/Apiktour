@@ -17,4 +17,4 @@
             <li> <a href="#">회원탈퇴</a> </li>        
         </ul>  
         
-        <div id="admin"><a href="${pageContext.request.contextPath}/admin/AdminMain.do"> admin </a></div> 
+        <div id="admin"><a href="${pageContext.request.contextPath}/admin/admin_main.do"> admin </a></div> 
