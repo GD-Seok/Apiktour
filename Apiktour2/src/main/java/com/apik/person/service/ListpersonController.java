@@ -21,7 +21,7 @@ public class ListpersonController {
 	@Autowired
 	private PersonDAO personDao;
 	
-	@RequestMapping("/05_admin_m_se.do")
+	@RequestMapping("/admin/05_admin_m_se.do")
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
             @RequestParam(value="keyField",defaultValue="") String keyField,
             @RequestParam(value="keyWord",defaultValue="") String keyWord) {
