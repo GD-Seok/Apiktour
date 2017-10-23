@@ -31,6 +31,12 @@
 	<bean class="com.apik.person.service.PersonDaoImpl"/>
 	<bean class="com.apik.person.service.InsertpersonController"/>
 	<bean class="com.apik.person.service.ListpersonController"/>
+	
+	
+	<!-- course 등록 --> 
+	<bean class="com.apik.course.service.IntroController"/>
+	<bean class="com.apik.course.service.CourseDaoImpl"/>
+	
 
 	<!-- 리소스 번들을 이용해서 처리 -->
     <bean id="messageSource" 
