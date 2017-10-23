@@ -1,23 +1,8 @@
 package com.apik.person.command;
 
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-
 public class PersonCommand {
-	@NotEmpty @Email
-	private String id; // 회원의 Email
-	
-	@NotEmpty @Size(min=6, max=12)
-	private String passwd;
-	
-	@NotEmpty
-	private String name;
-	
-	private String gender; // 성별, M,W
-	private int age; // 10 ~ 90
-
+	private String id,passwd,name,gender;
+	private int age;
 	
 	public String getId() {
 		return id;

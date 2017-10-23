@@ -31,12 +31,10 @@
 	<bean class="com.apik.person.service.PersonDaoImpl"/>
 	<bean class="com.apik.person.service.InsertpersonController"/>
 	<bean class="com.apik.person.service.ListpersonController"/>
-	<bean class="com.apik.person.service.PersonController"/>
 	
 	
 	<!-- course 등록 --> 
 	<bean class="com.apik.course.service.IntroController"/>
-	<bean class="com.apik.course.service.ResultController"/>
 	<bean class="com.apik.course.service.CourseDaoImpl"/>
 	
 

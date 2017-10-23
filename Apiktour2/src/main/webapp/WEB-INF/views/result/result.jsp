@@ -4,19 +4,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@taglib prefix="spring"  uri="http://www.springframework.org/tags" %>               
-<%@taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>  
+<%@taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>   
+<script type="text/javascript" src="<c:url value='/resources/js/common/jquery-3.2.1.min.js' />"></script>
+<link href="<c:url value='/resources/css/result/result.css?ver=1' />" rel="stylesheet"></link>
+<link href="<c:url value='/resources/css/result/slick.css?ver=1' />" rel="stylesheet"></link>
+<link href="<c:url value='/resources/css/result/slick-theme.css?ver=1' />" rel="stylesheet"></link>
+
+<script type="text/javascript" src="<c:url value='/resources/js/result/slick.js?ver=1' />"></script>
+
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAB_ImVdT5sLLK3qg1h7obBSI8hqbvk0ZE"></script>
+
+
+   
 <script>
 //alert('hello')
 
 $(function(){
-     var aa='제이쿼리 작동';
-   // alert(aa)
+/*     var aa='제이쿼리 작동';
+    alert(aa)
     var mode = '${play}';
     var level = '${lv}'
-    //alert(mode);
-   // alert(level); 
+    alert(mode);
+    alert(level); */
     
-    $('#mode option').each(function(){
+    $('#play option').each(function(){
         if($(this).val()==mode){
           $(this).attr("selected","selected"); // attr적용안될경우 prop으로
         }
@@ -46,7 +57,6 @@ $(function(){
 
 
 </script>
-
          <style type="text/css">
          .slider { /*background-color: coral;*/
             width: 100%;
@@ -59,13 +69,13 @@ $(function(){
           border: 2px solid #ccc;
           border-radius: 3px;
         }
-
         </style>
 
+    
     <div id="container">
       <div id="filter">
       	<form id="choi" method="post">
-      	  <select name="mode" id="mode">
+      	  <select name="play" id="play">
          <option>유형 선택</option>
          <option value="rest">쉴래</option>
          <option value="play">놀래</option>
@@ -81,9 +91,8 @@ $(function(){
 
       		<button id="redi">선택</button>
       	</form>
-		<a href="${pageContext.request.contextPath}/json.do">json 테스트</a>
+
      </div>
-     
       <div id="cosListContainer">
           <div id="cosList" class="cos slider">
     			<c:if test="${count==0}">
@@ -93,7 +102,8 @@ $(function(){
 				<c:forEach var="cos" items="${cosList }">  
 					<div>
 				   	<a class="flexCol CosInfo" href="javascript:void(0)" onclick="openCosInfo()">
-				   		${ cos.getCosname() }<br>			
+				   		${ cos.getCosname() }<br>		
+				   		코스번호 : <span id="cosnum">${cos.getCosnum() }</span>		   		
 				   	</a>
 				   	</div>
 				</c:forEach>
@@ -104,6 +114,9 @@ $(function(){
     <!-- container -->
 
 
+<script>
+
+</script>
 
 
 
@@ -139,6 +152,7 @@ var features = [
  features.forEach(function(feature) {
           var marker = new google.maps.Marker({
             position: feature.position,
+            icon: icons[feature.type].icon,
             map: map
           });
         });

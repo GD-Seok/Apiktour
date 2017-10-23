@@ -16,7 +16,6 @@ public interface CourseDAO {
 	
 	public int getCourseNumCount(int cosnumL);
 	
-	public List<CourseCommand> getCourseMarkerList(Map<String,Object> map);
 	
 	
 }
