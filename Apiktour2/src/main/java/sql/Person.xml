@@ -20,32 +20,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 						id Like '%'+#{keyWord}+'%'
 					</if>
 					<if test="keyWord!==null and keyField=='name'">
-						name Like CONCAT('%',#{keyWord},'%')
+						name Like '%'+#{keyWord}+'%'
 					</if>
 					<if test="keyWord!==null and keyField=='gender'">
-						gender Like CONCAT('%',#{keyWord},'%')
+						gender Like '%'+#{keyWord}+'%'
 					</if>
 					<if test="keyWord!==null and keyField=='age'">
-						age Like CONCAT('%',#{keyWord},'%')
+						age Like '%'+#{keyWord}+'%'
 					</if>					
 				</where> 
-				order by id desc limit 1,10
+				order by id desc limit 0,10
 	</select>
 	
 	<select id="selectCount" parameterType="map" resultType="Integer">
 		select count(*) from person
 			<where>
 					<if test="keyWord!==null and keyField=='id'">
-						id Like CONCAT('%',#{keyWord},'%')
+						id Like '%'+#{keyWord}+'%'
 					</if>
 					<if test="keyWord!==null and keyField=='name'">
-						name Like CONCAT('%',#{keyWord},'%')
+						name Like '%'+#{keyWord}+'%'
 					</if>
 					<if test="keyWord!==null and keyField=='gender'">
-						gender Like CONCAT('%',#{keyWord},'%')
+						gender Like '%'+#{keyWord}+'%'
 					</if>
 					<if test="keyWord!==null and keyField=='age'">
-						age Like CONCAT('%',#{keyWord},'%')
+						age Like '%'+#{keyWord}+'%'
 					</if>				
 			</where>
     </select> 
