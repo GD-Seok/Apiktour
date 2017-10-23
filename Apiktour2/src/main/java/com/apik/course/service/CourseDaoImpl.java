@@ -42,6 +42,12 @@ public class CourseDaoImpl extends SqlSessionDaoSupport implements CourseDAO {
 		return getSqlSession().selectOne("selectCourseNumCount", cosnumL);
 	}
 
+	@Override
+	public List<CourseCommand> getCourseMarkerList(Map<String, Object> map) {
+		List<CourseCommand> list=getSqlSession().selectList("selectCourseMarker", map);
+		 return list;
+	}
+
 	
 	
 }

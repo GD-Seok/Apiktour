@@ -31,5 +31,10 @@ public class PersonDaoImpl extends SqlSessionDaoSupport implements PersonDAO {
 		// TODO Auto-generated method stub
 		getSqlSession().insert("insertperson",personDto);
 	}
+	@Override
+	public int checkId(String id) {
+		int countID=getSqlSession().selectOne("loginperson", id);
+		return countID;
+	}
 
 }
