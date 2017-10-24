@@ -9,6 +9,7 @@
 <title><tiles:getAsString name="title" /></title>
 <tiles:insertAttribute name="css" />
 <tiles:insertAttribute name="js" />
+<tiles:insertAttribute name="subRes" />
 </head>
   
 <body>

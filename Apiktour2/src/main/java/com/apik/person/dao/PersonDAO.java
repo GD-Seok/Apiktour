@@ -20,4 +20,7 @@ public interface PersonDAO {
 	//5. 회원 비밀번호 변경 (updatepersonpasswd)
 	//6. 회원 삭제 (deleteperson)
 
+	//7. checked id
+	public int checkId(String id);
+	
 }

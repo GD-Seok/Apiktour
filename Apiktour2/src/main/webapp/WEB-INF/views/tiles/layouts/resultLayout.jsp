@@ -3,15 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE html>
-<html lang="ko">
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><tiles:getAsString name="title" /></title>
 <tiles:insertAttribute name="css" />
 <tiles:insertAttribute name="js" />
-<link href="<c:url value='/resources/css/result/cos_Info.css?ver=1' />" rel="stylesheet"></link>
-<script type="text/javascript" src="<c:url value='/resources/js/result/cos_info.js?ver=1' />"></script>
 
+<tiles:insertAttribute name="jsSub" />
 </head>
   
 <body>

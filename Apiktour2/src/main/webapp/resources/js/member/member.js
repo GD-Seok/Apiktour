@@ -1,4 +1,33 @@
 
+
+/*$(document).ready(function(){
+	$('#email').on('blur', function(){
+		var MsgId = $('MsgId')
+		var id = $('#email').val();		
+		alert(id)				
+		$.ajax({
+                type: 'POST',
+                url: '${pageContext.request.contextPath}/join/checked.do',
+                data: {
+                    "id" : $('#email').val()
+                },
+                success: function(data){
+                    if($.trim(data) == 0){
+                        $('#MsgId').addClass('vaild');
+                        $('#MsgId').text('사용가능');
+                    }
+                    else{
+                    	//$('#MsgId').removeClass('vaild');
+                    	$('#MsgId').addClass('error');
+                        $('#MsgId').text('사용할 수 없는 이메일');
+                    }
+                }
+            });    //end ajax   
+	});
+	
+});
+*/
+
 function ck_email(){
         var email = document.getElementById("email")
         var MsgId = document.getElementById("MsgId")
@@ -10,7 +39,7 @@ function ck_email(){
             MsgId.style.display="block";
             MsgId.className='error'
             MsgId.innerHTML="이메일 형식을 확인하세요"
-            email.focus()
+            //email.focus()
             return false;
         } else{
             MsgId.className='vaild'
@@ -27,7 +56,7 @@ function ck_pwd(){
             MsgPw.style.display="block";
             MsgPw.className='error'
             MsgPw.innerHTML="숫자포함 최소 6자리 이상"
-            pwd.focus()
+           // pwd.focus()
             return false;
         } else{
             MsgPw.className='vaild'
@@ -62,7 +91,7 @@ function ck_name(){
             MsgName.style.display="block";
             MsgName.className='error'
             MsgName.innerHTML="2자 이상 입력하세요."
-            name.focus()
+            //name.focus()
             return false;
         } else{
             MsgName.className='vaild'

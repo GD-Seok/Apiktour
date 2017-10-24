@@ -13,12 +13,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- pseron 테이블에서 SQL 작업 -->
 	<!-- 전체 불러오기 -->
-	<select id="listperson" resultType="personDto">
-		select id,name,gender,age from person order by id desc limit 1,10
+	<select id="listperson" parameterType="map" resultType="personDto">
+		select id,name,gender,age from person 
+				<where>
+					<if test="keyWord!==null and keyField=='id'">
+						id Like '%'+#{keyWord}+'%'
+					</if>
+					<if test="keyWord!==null and keyField=='name'">
+						name Like CONCAT('%',#{keyWord},'%')
+					</if>
+					<if test="keyWord!==null and keyField=='gender'">
+						gender Like CONCAT('%',#{keyWord},'%')
+					</if>
+					<if test="keyWord!==null and keyField=='age'">
+						age Like CONCAT('%',#{keyWord},'%')
+					</if>					
+				</where> 
+				order by id desc limit 1,10
 	</select>
 	
-	<select id="selectCount" resultType="Integer">
+	<select id="selectCount" parameterType="map" resultType="Integer">
 		select count(*) from person
+			<where>
+					<if test="keyWord!==null and keyField=='id'">
+						id Like CONCAT('%',#{keyWord},'%')
+					</if>
+					<if test="keyWord!==null and keyField=='name'">
+						name Like CONCAT('%',#{keyWord},'%')
+					</if>
+					<if test="keyWord!==null and keyField=='gender'">
+						gender Like CONCAT('%',#{keyWord},'%')
+					</if>
+					<if test="keyWord!==null and keyField=='age'">
+						age Like CONCAT('%',#{keyWord},'%')
+					</if>				
+			</where>
     </select> 
 	
 	<!-- 회원 로그인 확인 , id가 있을 경우, 1반환, 없을경우 0 반환-->
