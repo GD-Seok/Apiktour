@@ -37,6 +37,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="selectCourseNumList" parameterType="Integer" resultType="courseDto">
 		select c.cosnum, c.lv, l.locnum, m.locname, m.locationx, m.locationy, m.loctype 
+		from COURSE c, COSLOC l, MAP m 
 		where l.locnum=m.locnum and c.cosnum=l.cosnum 
 		and c.cosnum=#{cosnum}
 	</select>	
@@ -49,6 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  <select id="selectCourseMarker" parameterType="map" resultType="courseDto">
 	select c.play, c.lv, c.cosnum, c.cosname, l.locnum, m.locname, m.locationx, m.locationy, m.loctype 
+	from COURSE c, COSLOC l, MAP m 
 	where l.locnum=m.locnum and c.cosnum=l.cosnum 
 	and c.play=#{play} and lv=#{lv}
 	</select>
