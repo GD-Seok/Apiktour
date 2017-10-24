@@ -3,12 +3,13 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/intro/play.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/intro/rest.css">
 
-<meta charset="UTF-8">
-<title>쉴래? 놀래?</title>
-
-<script type="text/javascript">
+	
+	<meta charset="UTF-8">
+	<title>쉴래? 놀래?</title>
+	
+	<script type="text/javascript">
 
 	</script>
 </head>
@@ -18,9 +19,9 @@
  	request.setCharacterEncoding("utf-8");
 	String slider_val=request.getParameter("sliderVal");
 %>
-	<div class="wrap">
+    <div class="wrap">
 		<div class="container">
-			<div class="textOne"><%=slider_val %>!</div>
+			<div class="textOne"><%=slider_val %>...</div>
 		</div>
 
 		<div id="container2">
@@ -29,8 +30,7 @@
 		</div>
 		<!-- container -->
 		<button onclick="location.href='result.html'">다음</button>
-	</div>
-	<!-- wrap-->
-</body>
+	</div> <!-- wrap-->
+ </body>
 
 </html>

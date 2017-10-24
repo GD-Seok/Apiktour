@@ -1,47 +1,37 @@
+@font-face{
+	font-family:'BusanBada';
+	src:url(C:/webtest/00.gg/font/BusanBada.ttf) format('truetype');
+}
 
-
-.background {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  overflow: hidden;
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  height: 130vh;
-  position: fixed;
-  width: 100%;
-  -webkit-transform: translateY(30vh);
-          transform: translateY(30vh);
+.background{
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+	background-color:#c0d54c;
+	overflow: hidden;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: 120vh;
+    position: fixed;
+    width: 100%;
+    -webkit-transform: translateY(30vh);
+    transform: translateY(30vh);
   -webkit-transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
   transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
 }
-.background:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-}
+
 .background:first-child {
-  background-color: dodgerblue;
+  background-color: #c0d54c;
   -webkit-transform: translateY(-15vh);
           transform: translateY(-15vh);
 }
+
 .background:first-child .content-wrapper {
   -webkit-transform: translateY(15vh);
           transform: translateY(15vh);
 }
-.background:nth-child(2) {
-  background-color: firebrick;
-}
 
-
-/* Set stacking context of slides */
 .background:nth-child(1) {
   z-index: 3;
 }
@@ -49,7 +39,6 @@
 .background:nth-child(2) {
   z-index: 2;
 }
-
 
 .content-wrapper {
   height: 100vh;
@@ -63,8 +52,8 @@
   -ms-flex-flow: column nowrap;
       flex-flow: column nowrap;
   color: #fff;
-  font-family: Montserrat;
-  text-transform: uppercase;
+  /*font-family: Montserrat;
+  text-transform: uppercase;*/
   -webkit-transform: translateY(40vh);
           transform: translateY(40vh);
   will-change: transform;
@@ -73,15 +62,51 @@
   -webkit-transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
-.content-title {
-  font-size: 6vh;
-  line-height: 2;
-}
-.content-p {
-  font-size: 2.5vh;
-  line-height: 1.4;
+
+.content-title{
+    margin:0 auto;
+    /*padding-top: 26vh;
+    width: 411px;
+    height: 396px;*/
+    position: relative;
+    
+    /*move �슚怨�*/
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
+@-webkit-keyframes example{
+    0% {left:0px; top:0px;}
+    /*25% {left:0px; top:0px;}*/
+    50% {left:0px; top:-50px;}
+    /*75% {left:0px; top:0px;}*/
+    100% {left:0px; top:0px;}
+}
+@keyframes example {
+    0% {left:0px; top:0px;}
+    /*25% {left:0px; top:0px;}*/
+    50% {left:0px; top:-50px;}
+    /*75% {left:0px; top:0px;}*/
+    100% {left:0px; top:0px;}
+}
+
+.textTitle{
+    position: absolute;
+    width: 200px;
+    height: 130px;
+    left: 75px;
+    top: 50px;
+    text-align: left;
+    font-size: 35px;
+    font-family: 'BusanBada';
+    line-height: 50px;
+}
+
+/*�몢踰덉㎏ select 遺�遺꾩엯�땲�떎. */
 
 .content-wrapper2 {
   height: 130vh;
@@ -103,7 +128,6 @@
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
 
-
 section{
     flex: 1;
     height: 130vh;
@@ -112,42 +136,118 @@ section{
 }
 
 
-
-section:first-child{    
-    background-color: aquamarine;
-    
+section:first-child{     /*background:url('../images/bg/rest_change.jpg') no-repeat;*/
+    background-color: #57c4c7;
+    background-size: 20%;
+    background-position: center;
+    /*background-image: url('../images/icon/rest.png');
+    background-repeat: no-repeat;*/
 }
 
 section:nth-child(2){
-    background-color: darksalmon;
+    background-color: #f67869;
+    background-size: 20%;
+    background-position: center;
+    /*background-image: url('../images/icon/play.png');
+    background-repeat: no-repeat;*/
 }
 
-
-
-.flexTxt{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-  -ms-flex-flow: column nowrap;
-      flex-flow: column nowrap;
-    
-
+/*�씠誘몄� �슚怨�*/
+.reatSection img{
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+    width: 12vw;
+    /*text-align: center;*/
+    left: 38%;
+}
+.restafter{
+    display: none;
+}
+.restafter a{
+    position: absolute;
+    top: 50%;
+    text-decoration: none;
+    text-align: center;
+    z-index: 10;
+    color:white;
+    font-size: 1.5em;
+    font-family: "BusanBada";
+    right: 0;
+    bottom: 0;
+    left: 2.7%;
+}
+.restafter img{
+    position: absolute;
+    background-size: 100%;
+    margin: auto;
+    width: 50vw;
+   height: 100vh;
+   top: 0%;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-section > p:hover{    
-    background-color: rgba(0, 0, 0, 0.3);
+.playSection img{
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+    width: 12vw;
+    /*text-align: center;*/
+    right:38%;
+}
+.playafter{
+    display: none;
+}
+.playafter a{
+    position: absolute;
+    top: 50%;
+    text-decoration: none;
+    text-align: center;
+    z-index: 10;
+    color:white;
+    font-size: 1.5em;
+    font-family: "BusanBada";
+    right: .5%;
+    bottom: 0;
+    left: 0;
+}
+.playafter img{
+    position: absolute;
+    background-size: 100%;
+    margin: auto;
+    width: 50vw;
+   height: 100vh;
+   top: 0%;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
+/*ring spin �슚怨�*/
+.restRing{
+    z-index: 1;
+}
+.restRing:hover{
+    -webkit-animation:spin .8s linear; 
+    -moz-animation:spin .8s linear; 
+    animation:spin .8s linear;
+}
+.playRing{
+    z-index: 1;
+}
+.playRing:hover{
+    animation:spin .8s linear;
+    -webkit-animation:spin .8s linear; 
+    -moz-animation:spin .8s linear;     
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg);}} 
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg);}} 
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg);}}
 
 
-
-
-
-/* 스크롤 css */
+/* �뒪�겕濡� css */
 .background.up-scroll {
   -webkit-transform: translate3d(0, -15vh, 0);
           transform: translate3d(0, -15vh, 0);

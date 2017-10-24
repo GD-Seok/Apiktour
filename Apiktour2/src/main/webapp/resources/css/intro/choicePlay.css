@@ -1,0 +1,56 @@
+@font-face{
+    font-family:'BusanBada';
+ 
+    src:url(C:/webtest/00.gg/font/BusanBada.ttf) format('truetype');
+}
+
+html,body{    
+    background-color:#FFDB47;
+    height: 100%;
+    width: 100%;
+}
+
+label{
+    position: relative;
+    top:2.5vw;
+    left: 4.5vw;
+    font-family: 'BusanBada';
+    font-size: 4.5vw;
+    color: #fff;
+    line-height: 6vw;
+}
+
+/*.vertical{position: absolute;}*/
+
+/* 踰꾪듉�슚怨� */
+button {
+    position: absolute;
+    border-radius: 0.6em;
+    background-color: #fff;
+    width: 12vw;
+    height: 5vh;
+    right: 6vh;
+    bottom: 3vh;
+/*display: flex;*/
+/*align-self: center;*/
+/*margin: 100px;*/
+/*padding: 1.2em 2.8em;*/
+/*text-transform: uppercase;*/
+/*overflow: hidden;*/    
+    line-height: .5em;
+    color: #89918C;
+    text-decoration: none;
+    text-align: center;    
+    font-family: 'BusanBada';
+    font-size: 1rem;
+}
+
+button:hover{
+    background:#89918C;
+    color: #fff;  
+}
+
+
+
+
+
