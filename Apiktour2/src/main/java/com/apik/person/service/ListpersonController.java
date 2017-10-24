@@ -22,7 +22,7 @@ public class ListpersonController {
 	@Autowired
 	PersonDAO personDao;
 	
-	@RequestMapping("/05_admin_m_se.do")
+	@RequestMapping("/admin/05_admin_m_se.do")
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response){
 		System.out.println("ListpersonControoler »£√‚µ !");
 		

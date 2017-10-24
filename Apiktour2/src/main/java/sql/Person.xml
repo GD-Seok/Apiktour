@@ -13,11 +13,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- pseron 테이블에서 SQL 작업 -->
 	<!-- 전체 불러오기 -->
-	<select id="listperson" parameterType="map" resultType="personDto">
+	<select id="listperson" resultType="personDto">
 		select id,name,gender,age from PERSON order by id desc
 	</select>
 	
-	<select id="countperson" parameterType="map" resultType="Integer">
+	<select id="countperson" resultType="Integer">
 		select count(*) from PERSON
     </select> 
 	
