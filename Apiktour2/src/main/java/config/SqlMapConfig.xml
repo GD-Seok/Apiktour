@@ -5,6 +5,8 @@
  	<typeAliases>
  		<typeAlias type="com.apik.cosloc.command.CoslocCommand" alias="coslocDto"/>
  		<typeAlias type="com.apik.course.command.CourseCommand" alias="courseDto"/>
+ 		<typeAlias type="com.apik.course.command.CourseVO" alias="courseVo"/>
+ 		 		
  		<typeAlias type="com.apik.icontype.command.IcontypeCommand" alias="icontypeDto"/>
  		<typeAlias type="com.apik.liket.command.LiketCommand" alias="liketDto"/>
  		<typeAlias type="com.apik.map.command.MapCommand" alias="mapDto"/>
