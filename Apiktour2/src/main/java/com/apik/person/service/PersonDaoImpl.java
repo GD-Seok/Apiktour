@@ -11,18 +11,21 @@ import com.apik.person.dao.PersonDAO;
 
 public class PersonDaoImpl extends SqlSessionDaoSupport implements PersonDAO {
 	
+	
 	//회원 목록 검색
+
 	@Override
-	public List<PersonCommand> listperson(Map<String, Object> map) {
+	public List<PersonCommand> listperson() throws DataAccessException {
 		// TODO Auto-generated method stub
-		List<PersonCommand> listperson=getSqlSession().selectList("listperson",map);
+		List<PersonCommand> listperson=getSqlSession().selectList("listperson");
 		return listperson;
 	}
+	
 	//검색시 필요한 페이징 처리
 	@Override
-	public int getRowCount(Map<String, Object> map) {
+	public int countperson() throws DataAccessException {
 		// TODO Auto-generated method stub
-		return getSqlSession().selectOne("selectCount", map);
+		return getSqlSession().selectOne("countperson");
 	}
 	
 	//회원 등록

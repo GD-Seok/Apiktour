@@ -28,6 +28,9 @@
 			<input type = "button" value="회원 등록" onclick="location.href='05_admin_m_in.do'">
 		</td>
 	</tr>
+	<tr>
+		<td>총 회원 수 : ${count}</td>
+	</tr>
 	
 	<tr bgcolor="#F3F3F3">
 		<td width="50">아이디</td>
@@ -51,6 +54,6 @@
 	</c:forEach>
 	
 	<tr>
-		<td align="center" colspan="5">${pagingHtml }</td>
+		<td align="center" colspan="5"></td>
 	</tr>
 </table>

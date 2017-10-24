@@ -11,8 +11,8 @@ import com.apik.person.command.PersonCommand;
 public interface PersonDAO {
 	
 	//1.회원 검색 (listperson)
-	public List<PersonCommand> listperson(Map<String,Object> map);
-	public int getRowCount(Map<String,Object> map);
+	public List<PersonCommand> listperson() throws DataAccessException;;
+	public int countperson() throws DataAccessException;
 	//2. 회원 로그인 (loginperson)
 	//3. 회원 등록 (insertperson)
 	public void insertperson(PersonCommand personDto) throws DataAccessException;

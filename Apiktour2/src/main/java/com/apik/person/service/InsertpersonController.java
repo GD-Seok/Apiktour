@@ -13,7 +13,7 @@ import com.apik.person.dao.PersonDAO;
 public class InsertpersonController {
 		
 		@Autowired
-		private PersonDAO personDao;
+		PersonDAO personDao;
 	
 		//POST방식과, GET 방식일 경우, redirect로 이동시킬지, POST일 경우, 처리를 할지 판단
 		@RequestMapping("/insertperson.do")
