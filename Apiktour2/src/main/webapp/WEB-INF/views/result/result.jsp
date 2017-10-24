@@ -10,11 +10,11 @@
 
 $(function(){
      var aa='제이쿼리 작동';
-   // alert(aa)
+   //alert(aa)
     var mode = '${play}';
     var level = '${lv}'
     //alert(mode);
-   // alert(level); 
+   //alert(level); 
     
     $('#mode option').each(function(){
         if($(this).val()==mode){

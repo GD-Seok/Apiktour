@@ -7,6 +7,7 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import com.apik.course.dao.CourseDAO;
 import com.apik.course.command.CourseCommand;
+import com.apik.course.command.CourseVO;
 
 public class CourseDaoImpl extends SqlSessionDaoSupport implements CourseDAO {
 	
@@ -43,8 +44,9 @@ public class CourseDaoImpl extends SqlSessionDaoSupport implements CourseDAO {
 	}
 
 	@Override
-	public List<CourseCommand> getCourseMarkerList(Map<String, Object> map) {
-		List<CourseCommand> list=getSqlSession().selectList("selectCourseMarker", map);
+	public List<CourseVO> getCourseMarkerList(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		List<CourseVO> list=getSqlSession().selectList("selectCourseMarker", map);
 		 return list;
 	}
 

@@ -47,8 +47,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from COSLOC where cosnum=#{cosnum}
 	</select>	
  
- 
- <select id="selectCourseMarker" parameterType="map" resultType="courseDto">
+ 	<select id="selectCourseMarker" parameterType="map" resultType="courseVo">
 	select c.play, c.lv, c.cosnum, c.cosname, l.locnum, m.locname, m.locationx, m.locationy, m.loctype 
 	from COURSE c, COSLOC l, MAP m 
 	where l.locnum=m.locnum and c.cosnum=l.cosnum 

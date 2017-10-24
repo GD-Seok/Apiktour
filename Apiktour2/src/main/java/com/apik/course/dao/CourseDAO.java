@@ -3,6 +3,7 @@ package com.apik.course.dao;
 import java.util.List;
 import java.util.Map;
 import com.apik.course.command.CourseCommand;
+import com.apik.course.command.CourseVO;
 
 public interface CourseDAO {
 
@@ -16,7 +17,9 @@ public interface CourseDAO {
 	
 	public int getCourseNumCount(int cosnumL);
 	
-	public List<CourseCommand> getCourseMarkerList(Map<String,Object> map);
+	public List<CourseVO> getCourseMarkerList(Map<String,Object> map);
+	
+	
 	
 	
 }

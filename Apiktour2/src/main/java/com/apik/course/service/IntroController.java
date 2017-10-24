@@ -112,12 +112,12 @@ public class IntroController {
 		mav.setViewName("intro/playPro"); //intro/playPro.jsp
 		mav.addObject("count", count);
 		mav.addObject("type", type);
+		mav.addObject("mode", mode);
 		mav.addObject("level", level);
 		mav.addObject("play", play);
 		
 		return mav;
 	}
-	
 	
 	
 }
