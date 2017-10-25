@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false" %>
-<form action="list.do" name="search" method="get" onsubmit="return searchCheck()">
+<form action="searchperson.do" name="search" method="get">
 	<table align="center" width="200" border="0" cellspacing="0" cellpagging="2">
 		<tr>
 			<td align="center">
