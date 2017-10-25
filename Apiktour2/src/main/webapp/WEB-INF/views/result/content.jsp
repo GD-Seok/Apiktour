@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@taglib prefix="spring"  uri="http://www.springframework.org/tags" %>               
+<%@taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>  
+ <!Doctype html> 
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <link href="<c:url value='/resources/css/result/content.css?ver=1' />" rel="stylesheet"></link>
 <link href="<c:url value='/resources/css/result/module.css?ver=1' />" rel="stylesheet"></link>
@@ -34,20 +38,23 @@
         else {            $('#head').removeClass('hd_scroll').addClass('hd_default');
         }          
       }  
+    
+      
+      
 </script>
 
 <header>
-<span class="back"><a href="javascript:history.back()">뒤로가기</a></span>
+<span class="back"><a href="javascript:history.back()">◀</a></span>
 <div id="head" class="hd_default">    
-    <div class="img_wrap"><img class="blur" src="${pageContext.request.contextPath}/web/images/img/photographer-407068_1920.jpg" alt="img"></div>  	
+    <div class="img_wrap"><img class="blur" src="${pageContext.request.contextPath}/resources/upload/img/123.jpg" alt="img"></div>  	
     <div class="title flexCenter">
-    <span class="">에너지 Lv.1</span>
-    <h1>여행코스제목</h1>
+    <span class="">${type } Lv.${level}</span>
+    <h1>${cosname }</h1>
     </div>
 </div>
-	
 </header>
 <div class="content_wrap flexCenter">
+
 	<div class="sumery">
 	<span>여행지1</span>
 	<span class="line"></span>
@@ -56,20 +63,45 @@
 	<span>여행지1</span>
 	</div>
 
+	
+<c:if test="${count==0}">
 	<article class="felxCenter">
-        <h3>여행지명</h3>
-        <p class="sumery_memo flexCenter">여행지 요약 정보가 없습니다.</p>
+        <h3>여행지명이 없습니다.</h3>
+        <p class="sumery_memo flexCenter">여행지 정보가 없습니다.</p>
         <p class="atc_img mgauto flexCenter">이미지가 없습니다.</p>
-        <p class="atc_api">API정보가 없습니다.</p>
+        <div class="atc_api">         
+			여행지 정보가 없습니다.
+		</div>
+	</article>
+	</c:if>
+	
+<c:forEach var="cosinfo" items="${cosnumList }">
+	<article class="felxCenter">
+        <h3>${cosinfo.getLocname() }</h3>
+        <p class="sumery_memo flexCenter">${cosinfo.getContents() }</p>
+        <p class="atc_img mgauto flexCenter">
+        	<img  src="${pageContext.request.contextPath}/resources/upload/img/${cosinfo.getImgname()}" alt="img">
+        </p>
+        <div class="atc_api">
+        <table class="api_summery">
+			<tr>
+				<th class="api_th">주소</th>
+				<td class="api_td">${cosinfo.getAddress()}</td>
+			</tr>
+			<tr>
+				<th class="api_th">연락처</th>
+				<td class="api_td">${cosinfo.getTel()}</td>
+			</tr>
+			<tr>
+				<th class="api_th">운영시간</th>
+				<td class="api_td">${cosinfo.getTime()}</td>
+			</tr>
+		</table>
+		</div>
         <hr>
 	</article>
+</c:forEach>
     
-    <article class="felxCenter">
-        <h3>여행지명</h3>
-        <p class="sumery_memo flexCenter">여행지 요약 정보가 없습니다.</p>
-        <p class="atc_img mgauto flexCenter">이미지가 없습니다.</p>
-        <p class="atc_api">API정보가 없습니다.</p>
-	</article>
 </div>
 
 

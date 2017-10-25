@@ -27,6 +27,13 @@ html,body{
             z-index: 1;
             }
 
+		 #map1{background-color: #fff;
+            height: 500px;
+            width: 500px;
+            position: fixed;
+    		top:0; left: 28vw;
+            }
+	
         
         #filter{ background-color: #eee;
         position: absolute;

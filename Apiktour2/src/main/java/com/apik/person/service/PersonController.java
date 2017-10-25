@@ -37,7 +37,7 @@ public class PersonController {
 	// 회원등록 페이지로 이동
 	@RequestMapping(value="/join.do",method=RequestMethod.GET)
 	public String join() {
-		return "member/member_in"; // return "이동할 페이지명"; 확장자 생략
+		return "member/member"; // return "이동할 페이지명"; 확장자 생략
 	}
 	
 	// 입력받은값을 초기화->다시 입력을 받을 수 있도록 처리

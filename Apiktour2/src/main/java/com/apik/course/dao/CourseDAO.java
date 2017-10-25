@@ -13,7 +13,7 @@ public interface CourseDAO {
 	
 	public List<CourseCommand> getCourseList(Map<String,Object> map);
 	
-	public List<CourseCommand> getCourseNumList(int cosnum);
+	public List<CourseVO> getCourseNumList(int cosnum);
 	
 	public int getCourseNumCount(int cosnumL);
 	

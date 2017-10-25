@@ -4,6 +4,26 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@taglib prefix="spring"  uri="http://www.springframework.org/tags" %>               
 <%@taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>   
+<%@ page import="com.apik.course.dao.*, com.apik.course.service.*, 
+							com.apik.course.command.*, java.util.List"%>
+
+<script>
+      
+    $( function() {
+       
+        $('#contentBtn').click(function(){
+			var cosnum=$('#cosnum').val()
+			var cosname=$('#cosname').val()
+			var mode=$('#mode').val()
+			var level=$('#level').val()
+
+			$('#contentView').attr('action','${pageContext.request.contextPath}/content.do').submit();
+			return true;//전송이 가능하게 설정		
+		})
+    
+    });
+    </script>     
+    
 
 <p>
 <span class="closebtn">
@@ -13,8 +33,8 @@
 <div id="wrap_cosinfo">
     <h1 class="mg_center txt_none">코스레벨아이콘</h1>
     <div id="title_bar" class="mg_b20 mg_t20">
-    <h2 class="txt_center fpx24 fw_6">%getCosname() </h2>
-    <span class="like txt-none"><a href="#">
+    <h2 class="txt_center fpx24 fw_6">코스명getCosname() </h2>
+    <span class="like txt-none"><a class="reg_liked" href="#">
         <svg version="1.1" id="btn_like" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
              y="0px" width="40.603px" height="37.374px" viewBox="0 0 40.603 37.374" enable-background="new 0 0 40.603 37.374"
              xml:space="preserve">
@@ -30,34 +50,60 @@
     </div>
     <p class="txt_center mg_b20">
  
-	 <span>${hi}</span>
+	 <span>여행지명 - getLocname() - 여행지명</span>
 
     </p>
     <p class="memo mg_b20">
-
+			코스 요약글 cos.getIntro() 
     </p>    
     <div id="wrap_api"> 
-
+<%-- <c:forEach var="cosinfo" items="${cosnumList }">   --%>
     <div class="list">
             <div class="api_title">
                 <span class="dot"></span>
-                <h3 class="fpx16 fw_6">map.getLocname() ${hi}</h3>
+                <h3 class="fpx16 fw_6">getLocname()</h3>
             </div>
 
             <div class="api_content line_left line_h">
                 <div class="list_info">           
                     <div>
-                    좌표: ><br>
-                   여행지타입 : ><br>
-                    api 내용을 가져옵니다.<br>
-                    api 내용을 가져옵니다.<br>
-                    api 내용을 가져옵니다.<br>
+                    <p class="api_img">
+                    	<img src="${pageContext.request.contextPath}/resources/upload/img/123.jpg" alt="getLocname()">
+                    </p>
+                    
+
+	                    <table class="api_summery">
+	                    	<tbody>
+	                    	<tr>
+	                    	<th class="api_th">주소</th>
+	                    	<td class="api_td">getAdress()</td>
+	                    	</tr>
+	                    	<tr>
+	                    	<th class="api_th">연락처</th>
+	                    	<td class="api_td">getTel()</td>
+	                    	</tr>
+	                    	<tr>
+	                    	<th class="api_th">운영시간</th>
+	                    	<td class="api_td">getTime()</td>
+	                    	</tr>   
+	                    	</tbody>                 	
+	                    </table>
+               
                     </div>
                 </div>
             </div>
         </div> <!-- list -->   
-
+<%-- </c:forEach> --%>
     </div><!-- wrap_api -->
-     <a href="${pageContext.request.contextPath}/content.do"  class="mg_t20 btn_details flex_txt fpx14">상세보기</a>
+    <form id="contentView" method="post">         
+                 <a id="contentBtn" href="#"  class="mg_t20 btn_details flex_txt fpx14">
+			     	상세보기     	
+			     <input type="hidden" name="cosnum" value="1" id="cosnum">
+			     <input type="hidden" name="cosname" value="코스제목" id="cosname">
+			     <input type="hidden" name="mode" id="mode" value="rest">
+	            <input type="hidden" name="level"  id="level"  value="1">
+			     </a>           
+    </form> 
+
     <!-- <button class="mg_t20 btn_details" onclick="moveContent()">상세보기</button> -->
 </div>

@@ -1,5 +1,5 @@
 package com.apik.course.command;
-// 코스, 마커, 위치  통합 DTO
+// 코스, 마커, 위치, details  통합 DTO
 public class CourseVO {
 	// Course TB
 		private int cosnum; // 코스 id(1~999)
@@ -18,6 +18,17 @@ public class CourseVO {
 		private double locationx; // 경도값(###.######)
 		private double locationy; // 위도값(###.######)
 		private String loctype; // 장소타입("A001" "A002)
+		
+		// icontiype
+		private String loctypeI,type;
+		
+		// DETAILS table
+		private int locnumD;
+ 		private String address;
+ 		private String imgname;
+ 		private String tel;
+ 		private String time;
+ 		private String contents;
 
 		// Course TB
 		public int getCosnum() {
@@ -119,4 +130,72 @@ public class CourseVO {
 			this.loctype = loctype;
 		}
 
+		public int getLocnumD() {
+			return locnumD;
+		}
+
+		// details		
+		public void setLocnumD(int locnumD) {
+			this.locnumD = locnumD;
+		}
+
+		public String getAddress() {
+			return address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public String getImgname() {
+			return imgname;
+		}
+
+		public void setImgname(String imgname) {
+			this.imgname = imgname;
+		}
+
+		public String getTel() {
+			return tel;
+		}
+
+		public void setTel(String tel) {
+			this.tel = tel;
+		}
+
+		public String getTime() {
+			return time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
+		}
+
+		public String getContents() {
+			return contents;
+		}
+
+		public void setContents(String contents) {
+			this.contents = contents;
+		}
+
+		public String getLoctypeI() {
+			return loctypeI;
+		}
+
+		public void setLoctypeI(String loctypeI) {
+			this.loctypeI = loctypeI;
+		}
+
+		// icontype
+		public String getType() {
+			return type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		
+		
 }

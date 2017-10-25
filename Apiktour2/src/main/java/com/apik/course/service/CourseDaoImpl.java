@@ -33,9 +33,9 @@ public class CourseDaoImpl extends SqlSessionDaoSupport implements CourseDAO {
 	}
 	
 	@Override
-	public List<CourseCommand> getCourseNumList(int cosnum) {
-		List<CourseCommand> list=getSqlSession().selectList("selectCourseNumList", cosnum);
-		return null;
+	public List<CourseVO> getCourseNumList(int cosnum) {
+		List<CourseVO> list=getSqlSession().selectList("selectCourseNumList", cosnum);
+		return list;
 	}
 
 	@Override

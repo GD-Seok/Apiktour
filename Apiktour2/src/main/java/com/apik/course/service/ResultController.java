@@ -36,8 +36,90 @@ public class ResultController {
 		return "resultMap";
 	}*/
 	
+		@RequestMapping("/resultcos.do")
+		public ModelAndView resultcos(
+				@RequestParam(value="mode", defaultValue="") String mode,
+				@RequestParam(value="level", defaultValue="") String level
+				//@RequestParam(value="count", defaultValue="") int count
+				) {
+			System.out.println("===result() 호출!===");	
+			int lv = Integer.parseInt(level);
+			String play=mode;			
+			
+			// DB 조회
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("play", play);
+			map.put("lv", new Integer(lv));
+			
+			int count=courseDao.getCourseCount(map);  //매개변수를 받아 해당하는 코스 개수 조회
+			List<CourseCommand> cosList = null;
+			
+			// paly와 lv에 해당하는 코스 리스트 
+			if(count > 0) {
+				cosList = courseDao.getCourseList(map);
+				System.out.println("cosList : "+cosList);
+			}else {
+				cosList = Collections.EMPTY_LIST;
+			}
+			// Log객체를 이용하여 처리과정 콘솔에 출력
+			if (log.isDebugEnabled()) { // 현재 로그객체가 디버그모드상태라면
+				System.out.println("===result() 호출!===");
+				log.debug("play : " + play);
+				log.debug("lv : " + lv);
+				log.debug("count : " + count);	
+				System.out.println("===result() end===");
+			}
+			
+			
+		
+
+				
+			System.out.println("play : " + play);
+			System.out.println("lv : " + lv); 
+			System.out.println("count : " + count);
+			//System.out.println("cosCount : " + cosCount);
+			System.out.println("===result() end===");
+			
+			ModelAndView mav = new ModelAndView();		
+			mav.setViewName("result/resultcos"); 
+			mav.addObject("count", count);
+			mav.addObject("cosList", cosList);
+			mav.addObject("play", play);
+			mav.addObject("lv", lv);
+			//mav.addObject("cosMakerList", cosMakerList);
+			
+			//mav.addObject("cosCount", cosCount);
+			//mav.addObject("cosnumList", cosnumList);
+			
+			return mav;
+		}	
+		
+		
+		@RequestMapping(value="/cosinfo2.do", method = RequestMethod.GET)
+		public String cosinfoPro2() {
+			
+			return "cos_info.jsp";
+		}
+		
+		
+		
+		@RequestMapping(value="/cosinfo.do", method = RequestMethod.POST)
+		public String cosinfoPro(@RequestParam(value="cosnum", defaultValue="") int cosnum,
+				Model model) {
+			
+			cosnum = 1;
+			List <CourseVO> cosnumList = courseDao.getCourseNumList(cosnum);
+			
+			model.addAttribute("cosnumList", cosnumList);
+			
+			return "cos_info.jsp";
+		}
+		
+		
+		
+		
 	// map 페이지 추가
-	@RequestMapping("/result.do")
+/*	@RequestMapping("/result.do")
 	public ModelAndView result(
 			@RequestParam(value="mode", defaultValue="") String mode,
 			@RequestParam(value="level", defaultValue="") String level
@@ -95,7 +177,7 @@ public class ResultController {
 		
 		return mav;
 	}
-	
+	*/
 	
 	
 	@RequestMapping("/json.do")
@@ -165,6 +247,21 @@ public class ResultController {
 
 		return "result/json"; // return "이동할 페이지명"; 확장자 생략
 	}
+	
+	
+	
+	
+
+	
+	
+/*	
+	@RequestMapping("/cosInfo.do")
+	public String cos() {
+		return "cosResult";
+	}
+	
+	*/
+	
 	
 	
 /*	@RequestMapping(value="/json.do")

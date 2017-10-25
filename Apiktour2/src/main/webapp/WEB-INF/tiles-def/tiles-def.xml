@@ -12,7 +12,7 @@
        <put-attribute name="title" value="" />  
        <put-attribute name="css" value="/WEB-INF/views/tiles/template/tiles-css/DefaultCss.jsp" />
        <put-attribute name="js" value="/WEB-INF/views/tiles/template/tiles-css/DefaultJs.jsp" />
-       <put-attribute name="subRes" value="서브 CSS JS란" />  
+       <put-attribute name="subRes" value=" " />  
        <put-attribute name="login" value="/WEB-INF/views/tiles/template/login.jsp" />
        <put-attribute name="sideMenu" value="/WEB-INF/views/tiles/template/sideMenu.jsp" />    
        <put-attribute name="body" value="서비스페이지" />  
@@ -26,7 +26,7 @@
    
 	<definition name="*/*" extends="main">
    <put-attribute name="title" value="{1}/{2}" />
-   <put-attribute name="subRes" value="/WEB-INF/views/tiles/tiles_res/member.jsp" />  
+   <put-attribute name="subRes" value="/WEB-INF/views/tiles/tiles_res/{1}.jsp" />  
    <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
 
@@ -51,7 +51,7 @@
        <put-attribute name="sideMenu" value="/WEB-INF/views/tiles/template/sideMenu.jsp" />  
         <put-attribute name="cosInfo" value="/WEB-INF/views/result/cos_info.jsp" />  
        <put-attribute name="body2" value="/WEB-INF/views/result/result.jsp" />  
-   </definition>
+</definition>
 	
 	
 
