@@ -20,8 +20,12 @@ public interface PersonDAO {
 	//3. 회원 등록 (insertperson)
 	public void insertperson(PersonCommand personDto) throws DataAccessException;
 	//4. 회원 수정 (updateperson)
+	public void updateperson(PersonCommand personDto) throws DataAccessException;	
 	//5. 회원 비밀번호 변경 (updatepersonpasswd)
 	//6. 회원 삭제 (deleteperson)
+	//7.회원 상세정보
+	public PersonCommand detailsperson(String id) throws DataAccessException;
+	
 
 	//7. checked id
 	public int checkId(String id);

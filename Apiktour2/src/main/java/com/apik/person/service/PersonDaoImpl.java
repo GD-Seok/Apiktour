@@ -47,6 +47,21 @@ public class PersonDaoImpl extends SqlSessionDaoSupport implements PersonDAO {
 		// TODO Auto-generated method stub
 		getSqlSession().insert("insertperson",personDto);
 	}
+	
+	//회원 상세정보
+	@Override
+	public PersonCommand detailsperson(String id) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return (PersonCommand)getSqlSession().selectOne("detailsperson",id);
+	}
+	
+	//회원 수정
+	@Override
+	public void updateperson(PersonCommand personDto) throws DataAccessException {
+		// TODO Auto-generated method stub
+		getSqlSession().update("updateperson",personDto);
+	}
+	
 	@Override
 	public int checkId(String id) {
 		int countID=getSqlSession().selectOne("loginperson", id);

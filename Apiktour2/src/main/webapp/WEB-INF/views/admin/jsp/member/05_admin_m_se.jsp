@@ -46,7 +46,7 @@
 	</c:if>
 	<c:forEach var="article" items="${listperson}">	
 		<tr>
-			<td align="center">${article.id}</td>			
+			<td><a href="details.do?id=${article.id}">${article.id}</a></td>			
 			<td>${article.name }</td>
 			<td>${article.gender }</td>
 			<td>${article.age }</td>

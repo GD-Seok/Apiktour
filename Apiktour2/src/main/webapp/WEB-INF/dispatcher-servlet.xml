@@ -32,6 +32,9 @@
 	<bean class="com.apik.person.service.InsertpersonController"/>
 	<bean class="com.apik.person.service.ListpersonController"/>
 	<bean class="com.apik.person.service.PersonController"/>
+	<bean class="com.apik.person.service.SearchpersonController"/>
+	<bean class="com.apik.person.service.DetailspersonController"/>
+	<bean class="com.apik.person.service.UpdatepersonController"/>
 	
 	
 	<!-- course 등록 --> 

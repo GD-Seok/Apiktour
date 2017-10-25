@@ -6,7 +6,19 @@
 <title>회원가입</title>
 <link rel="stylesheet" type="text/css" href="../../web/css/comm/common.css">
 <link rel="stylesheet" type="text/css" href="../../css/member.css" >
-<script language="JavaScript" src="../../js/member.js"></script>
+<script>
+	function inputCheck(){
+		if(document.getElementsByName("id")[0].value==""){
+			alert("아이디를 입력해주세요");
+			return false;
+		}else if(document.getElementsByName("passwd")[0].value==""){
+			alert("비밀번호를 입력해주세요");
+			return false;
+		}else{
+		document.forms.regForm.submit();
+		}
+	}
+</script>
 </head>
 <body onLoad="regForm.id.focus()">
 	<br>
@@ -15,7 +27,7 @@
 		<tr>
 			<td align="center" valign="middle" bgcolor="#FFFFCC">
 				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="PersonInsert.jsp">
+					<form name="regForm" method="post" action="insertperson.do">
 						<tr align="center" bgcolor="#996600">
 							<td colspan="3"><font color="#FFFFFF"><b>회원 등록
 										페이지</b></font></td>

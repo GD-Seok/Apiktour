@@ -16,14 +16,15 @@ public class InsertpersonController {
 		PersonDAO personDao;
 	
 		//POST방식과, GET 방식일 경우, redirect로 이동시킬지, POST일 경우, 처리를 할지 판단
-		@RequestMapping("/insertperson.do")
+		@RequestMapping("/admin/insertperson.do")
 		public String submit(@ModelAttribute("personDto")PersonCommand personDto,
 																					BindingResult result){
 			System.out.println("Personcommand : "+personDto);
 			try {
 				personDao.insertperson(personDto);
+				System.out.println("회원 정보 등록됨!");
 			}catch(Exception e){e.printStackTrace();}
-			return "member/05_admin_m_se.move";
+			return "redirect:05_admin_m_se.do";
 		}
 		
 

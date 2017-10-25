@@ -20,6 +20,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="countperson" resultType="Integer">
 		select count(*) from PERSON
     </select> 
+    
+    <!-- 상세보기 -->
+    <select id="detailsperson" parameterType="String" resultType="personDto">
+    	select * from PERSON where id=#{id}
+    </select>
 	
 	<!-- 회원 로그인 확인 , id가 있을 경우, 1반환, 없을경우 0 반환-->
 	<select id="loginperson" parameterType="String" resultType="String">
