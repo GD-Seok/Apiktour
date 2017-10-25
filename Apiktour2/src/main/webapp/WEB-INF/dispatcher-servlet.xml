@@ -35,7 +35,7 @@
 	<bean class="com.apik.person.service.SearchpersonController"/>
 	<bean class="com.apik.person.service.DetailspersonController"/>
 	<bean class="com.apik.person.service.UpdatepersonController"/>
-	
+	<bean class="com.apik.person.service.DeletepersonController"/>
 	
 	
 	<!-- course 등록 --> 
@@ -83,9 +83,3 @@
 			value="org.springframework.web.servlet.view.tiles3.TilesView" />
 	</bean>
 </beans>
-
-
-
-
-
-

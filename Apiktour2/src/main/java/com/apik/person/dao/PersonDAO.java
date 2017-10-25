@@ -23,6 +23,7 @@ public interface PersonDAO {
 	public void updateperson(PersonCommand personDto) throws DataAccessException;	
 	//5. 회원 비밀번호 변경 (updatepersonpasswd)
 	//6. 회원 삭제 (deleteperson)
+	public void deleteperson(String id) throws DataAccessException;
 	//7.회원 상세정보
 	public PersonCommand detailsperson(String id) throws DataAccessException;
 	

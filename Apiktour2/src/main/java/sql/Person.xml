@@ -57,7 +57,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 회원 삭제 -->
 	<delete id="deleteperson" parameterType="String">
-		delete from PERSON where id=#{id}
+		delete from LIKET where id=#{id};
+		delete from PERSON where id=#{id};
 	</delete>
 
 

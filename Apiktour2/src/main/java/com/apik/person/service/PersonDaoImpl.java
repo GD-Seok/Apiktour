@@ -62,6 +62,13 @@ public class PersonDaoImpl extends SqlSessionDaoSupport implements PersonDAO {
 		getSqlSession().update("updateperson",personDto);
 	}
 	
+	//회원 삭제
+	@Override
+	public void deleteperson(String id) throws DataAccessException {
+		// TODO Auto-generated method stub
+		getSqlSession().delete("deleteperson",id);
+	}
+	
 	@Override
 	public int checkId(String id) {
 		int countID=getSqlSession().selectOne("loginperson", id);
