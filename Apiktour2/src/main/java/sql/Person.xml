@@ -22,8 +22,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select> 
 	
 	<!-- 회원 로그인 확인 , id가 있을 경우, 1반환, 없을경우 0 반환-->
-	<select id="loginperson">
+	<select id="loginperson" parameterType="String" resultType="String">
 		select count(id) from PERSON where id=#{id}
+	</select>
+	
+	<!-- 회원 검색 -->
+	<select id="searchperson" parameterType="personDto" resultType="personDto">
+		select * from PERSON where ${keyField} LIKE '%${keyWord}%'					
+	</select>
+	
+	<!-- 검색된 회원 수  -->
+	<select id="countsearchperson" parameterType="personDto" resultType="Integer">
+		select count(*) from PERSON where ${keyField} LIKE '%${keyWord}%' 
 	</select>
 	
 	<!-- 회원등록 -->

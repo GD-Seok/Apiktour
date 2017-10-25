@@ -4,6 +4,9 @@ public class PersonCommand {
 	private String id,passwd,name,gender;
 	private int age;
 	
+	//°Ë»ö
+	private String keyWord,keyField;
+	
 	public String getId() {
 		return id;
 	}
@@ -33,6 +36,18 @@ public class PersonCommand {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+	public String getKeyWord() {
+		return keyWord;
+	}
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+	}
+	public String getKeyField() {
+		return keyField;
+	}
+	public void setKeyField(String keyField) {
+		this.keyField = keyField;
 	}
 
 	

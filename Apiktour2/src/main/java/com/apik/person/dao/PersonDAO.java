@@ -10,9 +10,12 @@ import com.apik.person.command.PersonCommand;
 //Person Table을 사용하는 모든 기능 등록
 public interface PersonDAO {
 	
-	//1.회원 검색 (listperson)
-	public List<PersonCommand> listperson() throws DataAccessException;;
+	//0.회원 검색 (searchperson)
+	public List<PersonCommand> searchperson(PersonCommand personDto) throws DataAccessException;
+	//1.회원 목록 (listperson)
+	public List<PersonCommand> listperson() throws DataAccessException;
 	public int countperson() throws DataAccessException;
+	public int countsearchperson(PersonCommand personDto) throws DataAccessException;
 	//2. 회원 로그인 (loginperson)
 	//3. 회원 등록 (insertperson)
 	public void insertperson(PersonCommand personDto) throws DataAccessException;
