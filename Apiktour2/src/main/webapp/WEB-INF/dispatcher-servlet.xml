@@ -37,9 +37,11 @@
 	<bean class="com.apik.person.service.UpdatepersonController"/>
 	
 	
+	
 	<!-- course 등록 --> 
 	<bean class="com.apik.course.service.IntroController"/>
 	<bean class="com.apik.course.service.ResultController"/>
+	<bean class="com.apik.course.service.ContentController"/>
 	<bean class="com.apik.course.service.CourseDaoImpl"/>
 	
 
@@ -81,3 +83,9 @@
 			value="org.springframework.web.servlet.view.tiles3.TilesView" />
 	</bean>
 </beans>
+
+
+
+
+
+
