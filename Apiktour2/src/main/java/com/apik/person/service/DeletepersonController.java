@@ -21,7 +21,7 @@ public class DeletepersonController {
 		personDao.deleteperson(id);
 		System.out.println(id+" 회원 삭제 완료 ");
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("member/05_admin_m_se.move");
+		mav.setViewName("redirect:05_admin_m_se.do");
 		
 		return mav;
 				

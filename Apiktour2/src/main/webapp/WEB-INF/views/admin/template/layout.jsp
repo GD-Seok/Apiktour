@@ -13,24 +13,24 @@
 <tiles:insertAttribute name="js"/>
 </head>
 <body>
-	<table border="1" cellpadding="0" cellspacing="1" bgcolor="#a0a0a0" width="100%">
-		<tr height="100" valign="middle" bgcolor="#FFF">
+	<table class="table" border="1" cellpadding="0" cellspacing="1" bgcolor="#a0a0a0" width="100%" top="0px">
+		<tr height="100" valign="middle" bgcolor="#ccffcc" top="0px">
 			<td colspan="2">
 				<tiles:insertAttribute name="header"/>
 			</td>
 		</tr>
 		
-		<tr height="600" valign="middle" bgcolor="#FFF">
-			<td width="15%" valign="top">
+		<tr height="100%" valign="middle" bgcolor="#FFF">
+			<td width="15%" valign="top" bgcolor="#fafafa">
 				<tiles:insertAttribute name="menu"/>
 			</td>
-			<td width="85%" valign="top">
+			<td width="85%" valign="top" class="content">
 				<tiles:insertAttribute name="content"/>
 			</td>
 		</tr>
 		
-		<tr height="100" valign="middle" bgcolor="#FFF">
-			<td colspan="2">
+		<tr height="100" valign="middle" bgcolor="#FFF" class="footer" width="100%">
+			<td colspan="2" bgcolor="#008000">
 				<tiles:insertAttribute name="footer"/>
 			</td>
 		</tr>

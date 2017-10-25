@@ -10,7 +10,7 @@
 					<option value="id">id</option>
 					<option value="name">회원명</option>
 					<option value="gender">성별</option>
-					<option value="age">나이</option>
+					<option value="age">연령대</option>
 				</select>
 			</td>
 			<td>
@@ -36,7 +36,7 @@
 		<td width="50">아이디</td>
 		<td width="70">회원명</td>
 		<td width="50">성별</td>		
-		<td width="70">나이</td>
+		<td width="70">연령대</td>
 	</tr>
 	<!-- 데이터의 유무에 따라서 -->
 	<c:if test="${count==0}">

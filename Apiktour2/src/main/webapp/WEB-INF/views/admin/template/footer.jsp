@@ -1,3 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<h2 align="center">이 부분은 footer에요</h2>
+<a herf="#">메인으로</a> | 인사채용 | 이용약관

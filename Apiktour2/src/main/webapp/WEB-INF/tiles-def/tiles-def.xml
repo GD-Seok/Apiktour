@@ -7,8 +7,7 @@
 <tiles-definitions>
 
 	<!-- 서비스 페이지 -->
-   <definition name="main"
-       template="/WEB-INF/views/tiles/layouts/Layout.jsp">  
+   <definition name="main" template="/WEB-INF/views/tiles/layouts/Layout.jsp">  
        <put-attribute name="title" value="" />  
        <put-attribute name="css" value="/WEB-INF/views/tiles/template/tiles-css/DefaultCss.jsp" />
        <put-attribute name="js" value="/WEB-INF/views/tiles/template/tiles-css/DefaultJs.jsp" />
@@ -21,7 +20,6 @@
    <!--.move 작동을 위해 페이징 우선 순위를 위로 잡아줌. -->
    	<definition name="*/*.move" extends="admin">
 		<put-attribute name="content" value="/WEB-INF/views/admin/jsp/{1}/{2}.jsp"/>
-		<put-attribute name="js" value=""/>		
 	</definition>
    
 	<definition name="*/*" extends="main">
@@ -63,8 +61,8 @@
 		<put-attribute name="content" value="이 부분이 바뀝니다."/>
 		<put-attribute name="footer" value="/WEB-INF/views/admin/template/footer.jsp"/>
 		
-		<put-attribute name="css" value="/WEB-INF/views/admin/script/boardDefaultCss.jsp"/>
-		<put-attribute name="js" value="/WEB-INF/views/admin/script/boardSearchJs.jsp"/>  
+		<put-attribute name="css" value="/WEB-INF/views/admin/css/admincss.jsp"/>
+		<put-attribute name="js" value="/WEB-INF/views/admin/js/adminjs.jsp"/>  
 	</definition>
 	
 	<!-- 에러 페이지 처리
