@@ -89,7 +89,7 @@
 }
 
 #cosInfo .closebtn { 
-    background: url('../../image/btn/btn_close.png') no-repeat center;
+    background: url('../../images/btn/btn_close.png') no-repeat center;
     background-size: 70%;
     background-color: #000;
     position: absolute;
@@ -113,8 +113,8 @@
     padding-top: 10px;
     height: 50%; overflow: auto;}
 
-h1{ background-color: fuchsia;
-    background: url(../image/icon/icn_lv_01.png) no-repeat center;
+#wrap_cosinfo > h1{ 
+    background: url('../../images/icon/icn_lv_01.png') no-repeat center;
     background-size: contain;
     width: 100px; height: 10%;
 }
