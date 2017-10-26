@@ -39,12 +39,13 @@ public class intro_login_suc_Controller {
 		if(result==0) {
 			System.out.println("없는 아이디");
 			mav.setViewName("intro/intro");
-			mav.addObject(result);
+			mav.addObject("result",result);
 		}else if(result==1) {
 			System.out.println("로그인성공");
 			mav.setViewName("intro/intro.sc");
 		    mav.addObject("id",id);
-		    mav.addObject(result);
+		    mav.addObject("passwd",passwd);
+		    mav.addObject("result",result);
 		}
 		return mav;
 	}
