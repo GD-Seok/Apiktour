@@ -9,26 +9,39 @@
 <title>쉴래? 놀래?</title>
 
 <script type="text/javascript">
+$( function() {
+    $('#rsBtn').click(function(){
+    	var level=$( "#level" ).val();
+		var mode=$('#play').val();
+		var count=$('#count').val();
 
-	</script>
+		$('#parameter').attr('action','${pageContext.request.contextPath}/resultcos.do').submit();
+		return true;//전송이 가능하게 설정		
+	})
+});
+</script>
 </head>
 
 <body>
 <%
  	request.setCharacterEncoding("utf-8");
-	String slider_val=request.getParameter("sliderVal");
+	String count=request.getParameter("level");
 %>
-	<div class="wrap">
-		<div class="container">
-			<div class="textOne"><%=slider_val %>!</div>
+	<div class="wrrap">
+		<div class="contain">
+			<div class="textOne"><%=count %>!</div>
 		</div>
-
+		
+		<form id="parameter"  method="post">
 		<div id="container2">
 			<span class="textTwo">Level 을</span><br> 
 			<span class="textThree">선택하셨습니다.</span>
 		</div>
 		<!-- container -->
-		<button onclick="location.href='result.html'">다음</button>
+		<button id="rsBtn" onclick="location.href='result.jsp'">다음</button>
+		<input type="hidden" name="mode" id="mode" value="${ play}">
+	   <input type="hidden" name="level"  id="level"  value="${ level}">
+	</form>
 	</div>
 	<!-- wrap-->
 </body>

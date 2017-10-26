@@ -26,7 +26,7 @@
 		/* 버튼 클릭시 페이지 이동 및 값 전달 */
 		$('#saveBtn').click(function(){
 			var restLevel=$( "#flat-slider-vertical-1" ).slider( "value" );		
-			$('#sliderVal').val(restLevel);
+			$('#level').val(restLevel);
 			//alert($('#sliderVal').val());	
 			return true;
 		})
@@ -39,7 +39,7 @@
 <%
  	request.setCharacterEncoding("utf-8");
 %>
-<div id="wrap">
+<div id="wrapp">
 	<form method="post" action="restPro.do">
 		<div id="container">
 			<p>
@@ -47,7 +47,7 @@
 			</p>
 			<div class="stuff">
 				<main><div id="flat-slider-vertical-1"></div></main>
-				<input type="hidden" name="sliderVal" value="" id="sliderVal">
+				<input type="hidden" name="level" value="" id="level">
 			</div>
 
 			<!--여기까지-->
