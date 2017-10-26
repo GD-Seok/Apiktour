@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false" %>
-<form action="list.do" name="search" method="get" onsubmit="return searchCheck()">
+<form action="listmap.do" name="search" method="get" >
 	<table align="center" width="200" border="0" cellspacing="0" cellpagging="2">
 		<tr>
 			<td align="center">
@@ -40,17 +40,17 @@
 			<td colspan="5" align="center">등록된 게시물이 없습니다.</td>
 		</tr>
 	</c:if>
-	<c:forEach var="article" items="${list}">	
+	<c:forEach var="article" items="${listmap}">	
 		<tr>
-			<td align="center">${article.seq}</td>
-			<td><a href="detail.do?seq=${article.seq }">${article.title }</a></td>
-			<td>${article.writer }</td>
-			<td>${article.regdate }</td>
-			<td>${article.hit }</td>
+			<td><a href="detailsmap.do?locnum=${article.locnum }">${article.locnum }</a></td>
+			<td>${article.locname }</td>
+			<td>${article.locationx }</td>
+			<td>${article.locationy }</td>
+			<td>${article.loctype }</td>
 		</tr>
 	</c:forEach>
 	
 	<tr>
-		<td align="center" colspan="5">${pagingHtml }</td>
+		<td align="center" colspan="5"></td>
 	</tr>
 </table>

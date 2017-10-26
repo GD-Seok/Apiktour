@@ -33,7 +33,7 @@
 						<tr>
 							<td width="16%">등록할 코스 id 값 (자동 등록)</td>
 							<td width="57%"><input type="text" name="cosnum" size="15"
-								readonly="true"> <input type="button" value="자동 등록"
+								> <input type="button" value="자동 등록"
 								onClick="idCheck(this.form.id.value)"></td>
 							<td width="27%">버튼을 눌러 자동 등록 해주세요.</td>
 						</tr>

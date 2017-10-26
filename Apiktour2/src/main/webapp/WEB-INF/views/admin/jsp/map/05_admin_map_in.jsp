@@ -4,7 +4,22 @@
 <html>
 <head>
 <title>지도 관리</title>
-
+<script>
+	function inputCheck(){
+		if(document.getElementsByName("locnum")[0].value==""){
+			alert("지도 id값을 입력해주세요");
+			return false;
+		}else if(document.getElementsByName("locationx")[0].value==""){
+			alert("locationx을입력해주세요");
+			return false;
+		}else if(document.getElementsByName("locationy")[0].value==""){
+			alert("locationy을입력해주세요");
+			return false;
+		}else{
+		document.forms.regForm.submit();
+		}
+	}
+</script>
 </head>
 <body onLoad="regForm.id.focus()">
 	<br>
@@ -13,7 +28,7 @@
 		<tr>
 			<td align="center" valign="middle" bgcolor="#FFFFCC">
 				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="mapInsert.jsp">
+					<form name="regForm" method="post" action="Insertmap.do">
 						<tr align="center" bgcolor="#996600">
 							<td colspan="3"><font color="#FFFFFF"><b>지도 등록
 										페이지</b></font></td>
