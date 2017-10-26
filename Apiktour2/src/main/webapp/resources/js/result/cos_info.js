@@ -1,11 +1,11 @@
   $(function(){
      var aa='제이쿼리 작동 cos_info.js';  
-    alert(aa)
+    //alert(aa)
     
     $(".clickev").click(function () { 
     	//alert('hello')
     	var cosname=$(this).text();
-    	alert(cosname)
+    	//alert(cosname)
     	 $('#cosInfo').css('left','0')
          $('#wrap').css('marginLeft','25vw')
          $('#wrapBg').css('display','block')   
@@ -14,7 +14,7 @@
          
          var cosnum = $('.cosnum').text();
     	
-    	alert(cosnum[0]);
+    	//alert(cosnum[0]);
         
          
     	/*$.ajax({
