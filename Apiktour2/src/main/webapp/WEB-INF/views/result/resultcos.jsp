@@ -85,11 +85,7 @@ $(document).ready(function() {
 
         </style>
 <section id="cosInfo">
-<c:forEach var="instanceVar" items="${cosList}">
-    <jsp:include page="cos_info.jsp">
-        <jsp:param name="myVar" value="${ cos.getCosnum() }"/>
-    </jsp:include>
-</c:forEach>
+    <jsp:include page="cos_info.jsp" />
 </section>
 
 <div id="wrap">
@@ -113,9 +109,7 @@ $(document).ready(function() {
         </select>
 
       		<button id="redi">선택</button>
-      		<a href="${pageContext.request.contextPath}/cosinfo2.do">코스인포이동</a>
       	</form>
-		<a href="${pageContext.request.contextPath}/json.do">json 테스트</a>
      </div>
      
       <div id="cosListContainer">

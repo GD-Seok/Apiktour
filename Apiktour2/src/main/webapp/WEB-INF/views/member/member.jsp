@@ -13,7 +13,7 @@ $(document).ready(function(){
 	$('#email').on('blur', function(){
 		var MsgId = $('MsgId')
 		var id = $('#email').val();		
-		alert(id)				
+		//alert(id)				
 		$.ajax({
                 type: 'POST',
                 url: '${pageContext.request.contextPath}/join/checked.do',
