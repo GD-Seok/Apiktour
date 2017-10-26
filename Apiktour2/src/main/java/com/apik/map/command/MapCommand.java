@@ -5,6 +5,9 @@ public class MapCommand {
 	private String locnmae,loctype;
 	private double locationx,locationy;
 	
+	//°Ë»ö
+	private String keyWord,keyField;
+	
 	public int getLocnum() {
 		return locnum;
 	}
@@ -34,6 +37,18 @@ public class MapCommand {
 	}
 	public void setLocationy(double locationy) {
 		this.locationy = locationy;
+	}
+	public String getKeyWord() {
+		return keyWord;
+	}
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+	}
+	public String getKeyField() {
+		return keyField;
+	}
+	public void setKeyField(String keyField) {
+		this.keyField = keyField;
 	}
 	
 	
