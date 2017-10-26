@@ -18,7 +18,7 @@ public class DetailspersonController {
 	@Autowired
 	private PersonDAO personDao;
 	
-	@RequestMapping("/admin/details.do")
+	@RequestMapping("/admin/detailsperson.do")
 	public ModelAndView detailsprocess(@RequestParam("id") String id) {
 		System.out.println("Detailsperson 동작!");
 		System.out.println("선택한 id : "+id);
