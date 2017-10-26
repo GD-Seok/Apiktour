@@ -1,5 +1,9 @@
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@font-face{
+	font-family:'BusanBada';
+	src:url(./../font/intro/BusanBada.ttf) format('truetype');
+}
 
 * { 
 	margin:0; 
