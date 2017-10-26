@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.dao.DataAccessException;
 
 import com.apik.course.dao.CourseDAO;
 import com.apik.course.command.CourseCommand;
@@ -49,7 +50,65 @@ public class CourseDaoImpl extends SqlSessionDaoSupport implements CourseDAO {
 		List<CourseVO> list=getSqlSession().selectList("selectCourseMarker", map);
 		 return list;
 	}
+	
 
+	//관리자 페이지
+	//코스 검색
+	@Override
+	public List<CourseCommand> searchcourse(CourseCommand courseDto) throws DataAccessException {
+		// TODO Auto-generated method stub
+		System.out.println("searchcourse 메소드 실행");
+		return getSqlSession().selectList("searchcourse",courseDto);
+	}
+	
+	//코스 목록
+	@Override
+	public List<CourseCommand> listcourse() throws DataAccessException {
+		// TODO Auto-generated method stub
+		List<CourseCommand> listcourse=getSqlSession().selectList("listcourse");
+		return listcourse;
+	}
+	
+	//검색된 목록 수
+	@Override
+	public int countcourse() throws DataAccessException {
+		// TODO Auto-generated method stub
+		return getSqlSession().selectOne("selectCosCount");
+	}
+	@Override
+	public int countsearchcourse(CourseCommand courseDto) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return getSqlSession().selectOne("countsearchcourse",courseDto);
+	}
+	
+	
+	//코스 등록
+	@Override
+	public void insertcourse(CourseCommand courseDto) throws DataAccessException {
+		// TODO Auto-generated method stub
+		getSqlSession().insert("insertcourse",courseDto);
+	}
+	
+	//코스 상세정보
+	@Override
+	public CourseCommand detailscourse(String cosnum) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return (CourseCommand)getSqlSession().selectOne("detailscourse",cosnum);
+	}
+	
+	//코스 수정
+	@Override
+	public void updatecourse(CourseCommand courseDto) throws DataAccessException {
+		// TODO Auto-generated method stub
+		getSqlSession().update("updatecourse",courseDto);
+	}
+	
+	//코스 삭제
+	@Override
+	public void deletecourse(String cosnum) throws DataAccessException {
+		// TODO Auto-generated method stub
+		getSqlSession().delete("deletecourse",cosnum);
+	}
 	
 	
 }

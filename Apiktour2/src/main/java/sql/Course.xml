@@ -54,9 +54,44 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	and c.play=#{play} and lv=#{lv}
 	</select>
  
- 
- 	<!-- 코스 검색 -->
- 	<!-- 코스 등록 -->
- 	<!-- 코스 수정 -->
- 	<!-- 코스 삭제 -->
+
+ 	
+ 	<!-- 전체 불러오기 -->
+	<select id="listcourse" resultType="courseDto">
+		select * from COURSE order by cosnum desc
+	</select>
+	
+	<!-- 전체 개수 id = selectCosCount  -->
+    
+    <!-- 상세보기 -->
+    <select id="detailscourse" parameterType="String" resultType="courseDto">
+    	select * from COURSE where cosnum=#{cosnum}
+    </select>
+	
+	<!-- 코스 검색 -->
+	<select id="searchcourse" parameterType="courseDto" resultType="courseDto">
+		select * from COURSE where ${keyField} LIKE '%${keyWord}%'					
+	</select>
+	
+	<!-- 검색된 코스 수  -->
+	<select id="countsearchcourse" parameterType="courseDto" resultType="Integer">
+		select count(*) from COURSE where ${keyField} LIKE '%${keyWord}%' 
+	</select>
+	
+	<!-- 코스등록 -->
+	<insert id="insertcourse" parameterType="courseDto">
+		insert into COURSE values(#{cosnum},#{play},#{cosname},#{lv},#{intro})
+	</insert>
+	
+	<!-- 코스 수정 -->
+	<update id="updatecourse" parameterType="courseDto">
+		update COURSE set cosnum=#{cosnum},play=#{play},cosname=#{cosname},lv=#{lv},intro=#{intro} where cosnum=#{cosnum}
+	</update>
+	
+	<!-- 코스 삭제 -->
+	<delete id="deletecourse" parameterType="String">
+		delete from LIKET where cosnum=#{cosnum};
+		delete from COSLOC where cosnum=#{cosnum};
+		delete from COURSE where cosnum=#{cosnum};
+	</delete>
  </mapper>

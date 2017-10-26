@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false" %>
-<form action="list.do" name="search" method="get" onsubmit="return searchCheck()">
+<form action="searchcourse.do" name="search" method="get">
 	<table align="center" width="200" border="0" cellspacing="0" cellpagging="2">
 		<tr>
 			<td align="center">
@@ -38,20 +38,19 @@
 	<!-- 데이터의 유무에 따라서 -->
 	<c:if test="${count==0}">
 		<tr>
-			<td colspan="5" align="center">등록된 게시물이 없습니다.</td>
+			<td colspan="5" align="center">등록된 코스가 없습니다.</td>
 		</tr>
 	</c:if>
-	<c:forEach var="article" items="${list}">	
+	<c:forEach var="article" items="${listcourse}">	
 		<tr>
-			<td align="center">${article.seq}</td>
-			<td><a href="detail.do?seq=${article.seq }">${article.title }</a></td>
-			<td>${article.writer }</td>
-			<td>${article.regdate }</td>
-			<td>${article.hit }</td>
+			<td><a href="detailscourse.do?cosnum=${article.cosnum }">${article.cosnum }</a></td>
+			<td>${article.play }</td>
+			<td>${article.cosname }</td>
+			<td>${article.lv }</td>
 		</tr>
 	</c:forEach>
 	
 	<tr>
-		<td align="center" colspan="5">${pagingHtml }</td>
+		<td align="center" colspan="5"></td>
 	</tr>
 </table>

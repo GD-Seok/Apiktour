@@ -12,7 +12,7 @@
 	<!-- 관리자 메인 페이지 -->
 	<bean class="com.apik.admin.admin_main_Controller" />	
 	<!-- cos 관리 페이지 -->
-	<bean class="com.apik.admin.admin_cos_se_Controller"/>
+	<!-- <bean class="com.apik.admin.admin_cos_se_Controller"/> -->
 	<bean class="com.apik.admin.admin_cos_in_Controller"/>
 	<!-- cosloc 관리 페이지 -->
 	<bean class="com.apik.admin.admin_cosloc_se_Controller"/>
@@ -43,6 +43,12 @@
 	<bean class="com.apik.course.service.ResultController"/>
 	<bean class="com.apik.course.service.ContentController"/>
 	<bean class="com.apik.course.service.CourseDaoImpl"/>
+	<bean class="com.apik.course.service.DeletecourseController"/>
+	<bean class="com.apik.course.service.DetailscourseController"/>
+	<bean class="com.apik.course.service.InsertcourseController"/>
+	<bean class="com.apik.course.service.ListcourseController"/>
+	<bean class="com.apik.course.service.SearchcourseController"/>
+	<bean class="com.apik.course.service.UpdatecourseController"/>
 	
 
 	<!-- 리소스 번들을 이용해서 처리 -->

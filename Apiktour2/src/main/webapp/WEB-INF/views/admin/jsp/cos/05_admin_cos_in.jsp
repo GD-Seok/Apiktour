@@ -3,11 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>회원가입</title>
-<link rel="stylesheet" type="text/css"
-	href="../../web/css/comm/common.css">
-<link rel="stylesheet" type="text/css" href="../../css/member.css">
-<script language="JavaScript" src="../../js/member.js"></script>
+<title>코스 등록</title>
+<script>
+	function inputCheck(){
+		if(document.getElementsByName("cosnum")[0].value==""){
+			alert("아이디를 입력해주세요");
+			return false;
+		}else if(document.getElementsByName("play")[0].value==""){
+			alert("쉴래? 놀래?를 입력해주세요");
+			return false;
+		}else{
+		document.forms.regForm.submit();
+		}
+	}
+</script>
 </head>
 <body onLoad="regForm.id.focus()">
 	<br>
@@ -16,7 +25,7 @@
 		<tr>
 			<td align="center" valign="middle" bgcolor="#FFFFCC">
 				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="PersonInsert.jsp">
+					<form name="regForm" method="post" action="insertcourse.do">
 						<tr align="center" bgcolor="#996600">
 							<td colspan="3"><font color="#FFFFFF"><b>코스 등록
 										페이지</b></font></td>

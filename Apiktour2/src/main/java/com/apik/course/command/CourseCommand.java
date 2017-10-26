@@ -3,6 +3,10 @@ package com.apik.course.command;
 public class CourseCommand {
 	private int cosnum,lv;
 	private String play,cosname,intro;
+	
+	//°Ë»ö
+	private String keyWord,keyField;
+	
 	public int getCosnum() {
 		return cosnum;
 	}
@@ -32,6 +36,18 @@ public class CourseCommand {
 	}
 	public void setIntro(String intro) {
 		this.intro = intro;
+	}
+	public String getKeyWord() {
+		return keyWord;
+	}
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+	}
+	public String getKeyField() {
+		return keyField;
+	}
+	public void setKeyField(String keyField) {
+		this.keyField = keyField;
 	}
 	
 	
