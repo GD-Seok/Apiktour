@@ -1,11 +1,11 @@
 @font-face{
     font-family:'BusanBada';
     
-    src:url(C:/webtest/00.gg/font/BusanBada.ttf) format('truetype');
+    src:url(../../font/intro/BusanBada.ttf) format('truetype');
 }
 
 body{
-    background-color: #626360;
+    background-color: #1B2EE8;
 }
 
 #container{    

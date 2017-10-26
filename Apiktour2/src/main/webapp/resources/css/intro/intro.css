@@ -1,6 +1,6 @@
 @font-face{
 	font-family:'BusanBada';
-	src:url(C:/webtest/00.gg/font/BusanBada.ttf) format('truetype');
+	src:url(../../font/intro/BusanBada.ttf) format('truetype');
 }
 
 .background{
@@ -70,7 +70,7 @@
     height: 396px;*/
     position: relative;
     
-    /*move �슚怨�*/
+    /*move 占쎌뒞�⑨옙*/
     -webkit-animation-name: example;
     -webkit-animation-duration: 4s;
     -webkit-animation-iteration-count: infinite;
@@ -106,7 +106,7 @@
     line-height: 50px;
 }
 
-/*�몢踰덉㎏ select 遺�遺꾩엯�땲�떎. */
+/*占쎈あ甕곕뜆�럮 select �겫占썽겫袁⑹뿯占쎈빍占쎈뼄. */
 
 .content-wrapper2 {
   height: 130vh;
@@ -152,7 +152,7 @@ section:nth-child(2){
     background-repeat: no-repeat;*/
 }
 
-/*�씠誘몄� �슚怨�*/
+/*占쎌뵠沃섎챷占� 占쎌뒞�⑨옙*/
 .reatSection img{
     position: absolute;
     top: 45%;
@@ -225,7 +225,7 @@ section:nth-child(2){
     left: 0;
 }
 
-/*ring spin �슚怨�*/
+/*ring spin 占쎌뒞�⑨옙*/
 .restRing{
     z-index: 1;
 }
@@ -247,7 +247,7 @@ section:nth-child(2){
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg);}}
 
 
-/* �뒪�겕濡� css */
+/* 占쎈뮞占쎄쾿嚥∽옙 css */
 .background.up-scroll {
   -webkit-transform: translate3d(0, -15vh, 0);
           transform: translate3d(0, -15vh, 0);

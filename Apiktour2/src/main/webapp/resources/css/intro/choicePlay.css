@@ -1,7 +1,7 @@
 @font-face{
     font-family:'BusanBada';
  
-    src:url(C:/webtest/00.gg/font/BusanBada.ttf) format('truetype');
+    src:url(../../font/intro/BusanBada.ttf) format('truetype');
 }
 
 html,body{    
@@ -22,7 +22,7 @@ label{
 
 /*.vertical{position: absolute;}*/
 
-/* 踰꾪듉�슚怨� */
+/* 甕곌쑵�뱣占쎌뒞�⑨옙 */
 button {
     position: absolute;
     border-radius: 0.6em;
