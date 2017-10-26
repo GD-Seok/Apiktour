@@ -93,7 +93,7 @@ public class ContentController {
 			System.out.println("===contentPro() end===");
 			
 			ModelAndView mav = new ModelAndView();		
-			mav.setViewName("result/content");
+			mav.setViewName("details/content");
 			mav.addObject("cosnumList", cosnumList);
 			mav.addObject("count", count);
 			mav.addObject("level", level);
