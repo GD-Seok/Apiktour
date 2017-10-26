@@ -36,7 +36,10 @@ function closePopup() {
     $('#modal_login').off('scroll touchmove mousewheel');
 }
 
-
+function loginout(){
+	alert("정상적으로 로그아웃 되셨습니다!");
+	location.href="index.do";
+}
 
 
 
