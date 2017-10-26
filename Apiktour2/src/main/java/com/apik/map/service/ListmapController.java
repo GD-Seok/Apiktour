@@ -49,7 +49,7 @@ public class ListmapController {
     
         
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("member/05_admin_map_se.move");
+        mav.setViewName("map/05_admin_map_se.move");
         mav.addObject("count", count);
         mav.addObject("listmap", listmap);
         

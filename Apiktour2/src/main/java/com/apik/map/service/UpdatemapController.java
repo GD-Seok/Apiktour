@@ -22,17 +22,17 @@ public class UpdatemapController {
 	
 	//일반 get방식 요청을 받았을 때 -> 페이지 이동
 	@RequestMapping(value ="/admin/updatemap.do",method = RequestMethod.GET) 
-	public ModelAndView updateprocess(@RequestParam("id") String id) {
+	public ModelAndView updateprocess(@RequestParam("locnum") String locnum) {
 		System.out.println("단순 Get 이동 방식 동작!");
 		
 		MapCommand listmap=null;		     
         
-		listmap=mapDao.detailsmap(id);
-        System.out.println("id : "+id+" 에 대한 상세정보 가져옴");
+		listmap=mapDao.detailsmap(locnum);
+        System.out.println("locnum : "+locnum+" 에 대한 상세정보 가져옴");
 		
 		ModelAndView mav = new ModelAndView();
 		
-		mav.setViewName("member/05_admin_map_mo.move");
+		mav.setViewName("map/05_admin_map_mo.move");
 		mav.addObject("listmap", listmap);
 		
 		return mav;
@@ -50,7 +50,7 @@ public class UpdatemapController {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		mav.setViewName("member/05_admin_map_vi.move");
+		mav.setViewName("map/05_admin_map_vi.move");
 		mav.addObject("listmap", listmap);		
 		return mav;		
 	}

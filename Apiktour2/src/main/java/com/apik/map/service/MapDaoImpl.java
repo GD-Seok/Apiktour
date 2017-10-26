@@ -52,9 +52,9 @@ public class MapDaoImpl extends SqlSessionDaoSupport implements MapDAO {
 	
 	//상세정보
 	@Override
-	public MapCommand detailsmap(String id) throws DataAccessException {
+	public MapCommand detailsmap(String locnum) throws DataAccessException {
 		// TODO Auto-generated method stub
-		return (MapCommand)getSqlSession().selectOne("detailsmap",id);
+		return (MapCommand)getSqlSession().selectOne("detailsmap",locnum);
 	}
 	
 	//수정
@@ -63,18 +63,11 @@ public class MapDaoImpl extends SqlSessionDaoSupport implements MapDAO {
 		// TODO Auto-generated method stub
 		getSqlSession().update("updatemap",mapDto);
 	}
-	
 	//삭제
 	@Override
-	public void deletemap(String id) throws DataAccessException {
+	public void deletemap(String locnum) throws DataAccessException {
 		// TODO Auto-generated method stub
-		getSqlSession().delete("deletemap",id);
-	}
-	
-	@Override
-	public int checkId(String id) {
-		int countID=getSqlSession().selectOne("loginperson", id);
-		return countID;
+		getSqlSession().delete("deletemap",locnum);
 	}
 
 }

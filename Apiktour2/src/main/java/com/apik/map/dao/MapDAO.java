@@ -31,13 +31,9 @@ public interface MapDAO {
 	//5. 회원 비밀번호 변경 (updatepersonpasswd)
 	
 	//6. 회원 삭제 (deleteperson)
-	public void deletemap(String id) throws DataAccessException;
+	public void deletemap(String locnum) throws DataAccessException;
 	
 	//7.회원 상세정보
-	public MapCommand detailsmap(String id) throws DataAccessException;
-	
-
-	//7. checked id
-	public int checkId(String id);
+	public MapCommand detailsmap(String locnum) throws DataAccessException;
 	
 }

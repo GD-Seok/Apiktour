@@ -20,20 +20,20 @@ public class DetailsmapController {
 	@Autowired
 	private MapDAO mapDao;
 	
-	@RequestMapping("/admin/details.do")
-	public ModelAndView detailsprocess(@RequestParam("id") String id) {
+	@RequestMapping("/admin/detailsmap.do")
+	public ModelAndView detailsprocess(@RequestParam("locnum") String locnum) {
 		System.out.println("Detailsperson 동작!");
-		System.out.println("선택한 id : "+id);
+		System.out.println("선택한 locnum : "+locnum);
 		
 		MapCommand listmap=null;		     
         
-		listmap=mapDao.detailsmap(id);
-        System.out.println("id : "+id+" 에 대한 상세정보 가져옴");
+		listmap=mapDao.detailsmap(locnum);
+        System.out.println("locnum : "+locnum+" 에 대한 상세정보 가져옴");
     
         
         ModelAndView mav = new ModelAndView();
         
-        mav.setViewName("member/05_admin_map_vi.move");
+        mav.setViewName("map/05_admin_map_vi.move");
         mav.addObject("listmap", listmap);
         		
 		return mav;

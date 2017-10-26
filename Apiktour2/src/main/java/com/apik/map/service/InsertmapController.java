@@ -23,7 +23,7 @@ public class InsertmapController {
 																					BindingResult result){
 			System.out.println("MapCommand : "+mapDto);
 			try {
-				mapDto.insertmap(mapDto);
+				mapDao.insertmap(mapDto);
 				System.out.println("회원 정보 등록됨!");
 			}catch(Exception e){e.printStackTrace();}
 			return "redirect:05_admin_map_se.do";

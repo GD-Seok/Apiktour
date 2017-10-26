@@ -16,11 +16,11 @@ public class DeletemapController {
 	MapDAO mapDao;
 	
 	@RequestMapping("/admin/deletemap.do")
-	public ModelAndView deleteprocess(@RequestParam("id") String id) {
+	public ModelAndView deleteprocess(@RequestParam("locnum") String locnum) {
 		System.out.println("deleteprocess 동작!");		
 		
-		mapDao.deletemap(id);
-		System.out.println(id+"삭제 완료 ");
+		mapDao.deletemap(locnum);
+		System.out.println(locnum+"삭제 완료 ");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:05_admin_map_se.do");
 		

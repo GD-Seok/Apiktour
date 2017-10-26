@@ -33,7 +33,7 @@ public class SearchmapController {
         mapDto.setKeyWord(keyWord);
         
 		//총 개수 
-        int count=mapDto.countsearchmap(mapDto);
+        int count=mapDao.countsearchmap(mapDto);
         System.out.println("검색된 person table의 count 수 : "+count);
         
 		List<MapCommand> listmap=null;
@@ -45,7 +45,7 @@ public class SearchmapController {
         }
 		
 		ModelAndView mav = new ModelAndView();
-        mav.setViewName("member/05_admin_map_se.move");
+        mav.setViewName("map/05_admin_map_se.move");
         mav.addObject("count", count);
         mav.addObject("listmap", listmap);
 		
