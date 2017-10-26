@@ -17,9 +17,26 @@
        <put-attribute name="body" value="서비스페이지" />  
    </definition>
    
+   <definition name="main2" template="/WEB-INF/views/tiles/layouts/Layout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="css" value="/WEB-INF/views/tiles/template/tiles-css/DefaultCss.jsp" />
+       <put-attribute name="js" value="/WEB-INF/views/tiles/template/tiles-css/DefaultJs.jsp" />
+       <put-attribute name="subRes" value=" " />  
+       <put-attribute name="login" value="/WEB-INF/views/tiles/template/login.jsp" />
+       <put-attribute name="sideMenu" value="/WEB-INF/views/tiles/template/sideMenu2.jsp" />    
+       <put-attribute name="body" value="서비스페이지2" />  
+   </definition>
+   
+   
    <!--.move 작동을 위해 페이징 우선 순위를 위로 잡아줌. -->
    	<definition name="*/*.move" extends="admin">
 		<put-attribute name="content" value="/WEB-INF/views/admin/jsp/{1}/{2}.jsp"/>
+	</definition>
+	
+	<definition name="*/*.sc" extends="main2">
+   <put-attribute name="title" value="{1}/{2}" />
+   <put-attribute name="subRes" value="/WEB-INF/views/tiles/tiles_res/{1}.jsp" />  
+   <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
    
 	<definition name="*/*" extends="main">
@@ -27,6 +44,8 @@
    <put-attribute name="subRes" value="/WEB-INF/views/tiles/tiles_res/{1}.jsp" />  
    <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
+	
+	
 
 	<!-- error 페이지 처리 ( 공통 에러페이지를 하기 위해 template로 설정)-->
       <definition name="pageError" template="/WEB-INF/views/tiles/layouts/Layout.jsp">

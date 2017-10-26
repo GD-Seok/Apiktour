@@ -37,6 +37,9 @@
 	<bean class="com.apik.person.service.UpdatepersonController"/>
 	<bean class="com.apik.person.service.DeletepersonController"/>
 	
+	<!-- 로그인 등록 -->
+	<bean class="com.apik.admin.intro_login_suc_Controller"/>
+	
 	
 	<!-- course 등록 --> 
 	<bean class="com.apik.course.service.IntroController"/>

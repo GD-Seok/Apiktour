@@ -31,4 +31,7 @@ public interface PersonDAO {
 	//7. checked id
 	public int checkId(String id);
 	
+	//8.login check
+	public int login(PersonCommand personDto);
+	
 }

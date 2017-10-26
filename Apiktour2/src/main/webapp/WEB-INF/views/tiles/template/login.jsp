@@ -3,7 +3,19 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-
+<script>
+	function login(){
+		if(document.getElementsByName("id")[0].value==""){
+			alert("아이디를 입력해주세요");
+			return false;
+		}else if(document.getElementsByName("passwd")[0].value==""){
+			alert("비밀번호를 입력해주세요");
+			return false;
+		}else{
+		document.forms.regForm.submit();
+		}
+	}
+</script>
 <link href="<c:url value='/resources/css/member/login.css?ver=1' />" rel="stylesheet"></link>
 
 <span class="close_btn"><a href="javascript:void(0)" onclick="closePopup()">close</a></span>
@@ -15,15 +27,16 @@
 			<div class="wrap">
 				<div class="memberbox">
 					<div class="loginbox">
+					<form name="regForm" method="post" action="login.do">
 						<p>
-							<input type="text" name="" id="" class="icon_id" placeholder="이메일 아이디 입력"  />
+							<input type="text" name="id" class="icon_id" placeholder="이메일 아이디 입력"  />
 						</p>
 						<p>
-							<input type="text" name="" id="" class="icon_pw" placeholder="비밀번호 입력" />
+							<input type="text" name="passwd" class="icon_pw" placeholder="비밀번호 입력" />
 						</p>
 			
-						<a href="${pageContext.request.contextPath}/login.do" class="btn1">로그인</a>
-			
+						<a href="#" class="btn1" onclick="login()">로그인</a>
+					</form>								
 						<div class="logincheck">
 							<input type="checkbox" id="loginck" name="loginck" value="로그인" checked="">
 							<label for="loginck">로그인 상태 유지</label>
