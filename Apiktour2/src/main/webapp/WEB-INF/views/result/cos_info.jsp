@@ -4,8 +4,8 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@taglib prefix="spring"  uri="http://www.springframework.org/tags" %>               
 <%@taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>   
-<%@ page import="com.apik.course.dao.*, com.apik.course.service.*, 
-							com.apik.course.command.*, java.util.List"%>
+
+
 
 <script>
       
@@ -27,13 +27,13 @@
 
 <p>
 <span class="closebtn">
-<a href="javascript:void(0)" onclick="closeCosInfo()" class="txt-none"></a>
+<a href="javascript:void(0)" class="closed" class="txt-none"></a>
 </span>
 </p>
 <div id="wrap_cosinfo">
     <h1 class="mg_center txt_none">코스레벨아이콘</h1>
     <div id="title_bar" class="mg_b20 mg_t20">
-    <h2 class="txt_center fpx24 fw_6">코스명getCosname() </h2>
+    <h2 class="txt_center fpx24 fw_6">잔잔한 여행</h2>
     <span class="like txt-none"><a class="reg_liked" href="#">
         <svg version="1.1" id="btn_like" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
              y="0px" width="40.603px" height="37.374px" viewBox="0 0 40.603 37.374" enable-background="new 0 0 40.603 37.374"
@@ -50,56 +50,121 @@
     </div>
     <p class="txt_center mg_b20">
  
-	 <span>여행지명 - getLocname() - 여행지명</span>
+	 <span>가파도 - 노리매 공원 - 오설록</span>
 
     </p>
-    <p class="memo mg_b20">
-			코스 요약글 cos.getIntro() 
+    <p class="memo mg_b20 flex_txt">
+			제주도 여행 추천 코스를 소개합니다.
     </p>    
     <div id="wrap_api"> 
 <%-- <c:forEach var="cosinfo" items="${cosnumList }">   --%>
     <div class="list">
             <div class="api_title">
                 <span class="dot"></span>
-                <h3 class="fpx16 fw_6">getLocname()</h3>
+                <h3 class="fpx16 fw_6">노리매 공원</h3>
+            </div>
+            <div class="api_content line_left line_h">
+                <div class="list_info">           
+                    <div>
+                    <p class="api_img">
+                    	<img src="${pageContext.request.contextPath}/resources/upload/img/111.jpg" alt="getLocname()">
+                    </p>
+	                    <table class="api_summery">
+	                    	<tbody>
+	                    	<tr>
+	                    	<th class="api_th">주소</th>
+	                    	<td class="api_td">제주특별자치도 서귀포시 대정읍 중산간서로 2260-15</td>
+	                    	</tr>
+	                    	<tr>
+	                    	<th class="api_th">연락처</th>
+	                    	<td class="api_td">064-792-8211</td>
+	                    	</tr>
+	                    	<tr>
+	                    	<th class="api_th">운영시간</th>
+	                    	<td class="api_td">09:00~18:00 폐장 1시간 전 입장마감</td>
+	                    	</tr>   
+	                    	</tbody>                 	
+	                    </table>               
+                    </div>
+                </div><!-- list_info -->
+            </div><!-- api_content -->          
+        </div> <!-- list -->   
+        
+         <div class="list">
+            <div class="api_title">
+                <span class="dot"></span>
+                <h3 class="fpx16 fw_6">가파도 자전거 여행</h3>
             </div>
 
             <div class="api_content line_left line_h">
                 <div class="list_info">           
                     <div>
                     <p class="api_img">
-                    	<img src="${pageContext.request.contextPath}/resources/upload/img/123.jpg" alt="getLocname()">
+                    	<img src="${pageContext.request.contextPath}/resources/upload/img/222.jpg" alt="getLocname()">
                     </p>
-                    
-
 	                    <table class="api_summery">
 	                    	<tbody>
 	                    	<tr>
 	                    	<th class="api_th">주소</th>
-	                    	<td class="api_td">getAdress()</td>
+	                    	<td class="api_td">제주특별자치도 서귀포시 대정읍 가파리()</td>
 	                    	</tr>
 	                    	<tr>
 	                    	<th class="api_th">연락처</th>
-	                    	<td class="api_td">getTel()</td>
+	                    	<td class="api_td">-</td>
 	                    	</tr>
 	                    	<tr>
 	                    	<th class="api_th">운영시간</th>
-	                    	<td class="api_td">getTime()</td>
+	                    	<td class="api_td">-</td>
 	                    	</tr>   
 	                    	</tbody>                 	
-	                    </table>
-               
+	                    </table>               
                     </div>
-                </div>
-            </div>
+                </div><!-- list_info -->
+            </div><!-- api_content -->          
         </div> <!-- list -->   
+        
+        
+         <div class="list">
+            <div class="api_title">
+                <span class="dot"></span>
+                <h3 class="fpx16 fw_6">오설록 티 뮤지엄</h3>
+            </div>
+
+            <div class="api_content line_left line_h">
+                <div class="list_info">           
+                    <div>
+                    <p class="api_img">
+                    	<img src="${pageContext.request.contextPath}/resources/upload/img/333.jpg" alt="getLocname()">
+                    </p>
+	                    <table class="api_summery">
+	                    	<tbody>
+	                    	<tr>
+	                    	<th class="api_th">주소</th>
+	                    	<td class="api_td">제주특별자치도 서귀포시 안덕면 신화역사로 15 오설록</td>
+	                    	</tr>
+	                    	<tr>
+	                    	<th class="api_th">연락처</th>
+	                    	<td class="api_td">064-794-5312</td>
+	                    	</tr>
+	                    	<tr>
+	                    	<th class="api_th">운영시간</th>
+	                    	<td class="api_td">09:00~18:00 연중무휴</td>
+	                    	</tr>   
+	                    	</tbody>                 	
+	                    </table>               
+                    </div>
+                </div><!-- list_info -->
+            </div><!-- api_content -->          
+        </div> <!-- list -->   
+        
+        
 <%-- </c:forEach> --%>
     </div><!-- wrap_api -->
     <form id="contentView" method="post">         
                  <a id="contentBtn" href="#"  class="mg_t20 btn_details flex_txt fpx14">
 			     	상세보기     	
 			     <input type="hidden" name="cosnum" value="1" id="cosnum">
-			     <input type="hidden" name="cosname" value="코스제목" id="cosname">
+			     <input type="hidden" name="cosname" value="잔잔한 여행" id="cosname">
 			     <input type="hidden" name="mode" id="mode" value="rest">
 	            <input type="hidden" name="level"  id="level"  value="1">
 			     </a>           

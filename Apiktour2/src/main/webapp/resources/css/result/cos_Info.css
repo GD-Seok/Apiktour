@@ -211,20 +211,25 @@ p.api_summery{
 table.api_summery{
 	border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    width: 100%;
     padding: 10px 0;
     font-size: 10pt;
 }
 
+table.api_summery > tbody{
+   
+}
+
 .api_th{
     text-align: left;
-    width: 70px;
+    width: 20%;
     color:dodgerblue;
 }
 
 
 .api_td{
     text-align: left;
-    width: 150px;
+    width: 80%;
 }
 
 /*

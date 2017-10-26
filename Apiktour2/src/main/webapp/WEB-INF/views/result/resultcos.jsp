@@ -76,12 +76,25 @@ $(document).ready(function() {
             margin: 0 auto;
         }
 
-        .slick-slide { background-color: #fff;
+        .slick-slide { /* background-color: #333; */
           height: 70px; /*width: 300px !important;*/
+          width: 100%;
           margin: 0px 3px;
           border: 2px solid #ccc;
           border-radius: 3px;
         }
+        
+         .cosbox{
+            background-color: #111;
+            overflow: hidden;
+            
+        }
+        
+        .txtc{
+        color:#fff;
+        }
+        
+        
 
         </style>
 <section id="cosInfo">
@@ -120,10 +133,14 @@ $(document).ready(function() {
 			
 				<c:forEach var="cos" items="${cosList }">  
 					<div>
-				   	<a class="flexCol CosInfo clickev" href="#cosInfo">
+					<p class="cosbox">
+				   	<a class="flexCol CosInfo clickev txtc" href="#">
 				   		${ cos.getCosname() }, 
-				   		<span class="cosnum">${ cos.getCosnum() }</span><br>			
+				   		<span class="cosnum">${ cos.getCosnum() }</span><br>			   		
 				   	</a>
+				   	<img class="cosimg" src="${pageContext.request.contextPath}/resources/upload/img/333.jpg" alt="img">
+				   	</p>
+				   	
 				   	</div>
 				</c:forEach>
           </div> <!-- cosList -->
