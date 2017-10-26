@@ -31,18 +31,23 @@ public class IntroController {
 
 	@RequestMapping(value = "/choicePlay.do", method = RequestMethod.GET)
 	public String choicePlay( Model model) {
+		System.out.println("===choicePlay() 호출!===");
 		String type="에너지";
 		String mode = "play"; 
 			
 		if (log.isDebugEnabled()) { // 현재 로그객체가 디버그모드상태라면
-			System.out.println("===choice() 호출!===");
+			System.out.println("===choicePlay() 호출!===");
 			log.debug("mode : " + mode); // 내부적인 처리과정
-			System.out.println("===choice() end===");
+			System.out.println("===choicePlay() end===");
 		}		
+		
+		System.out.println("mode : " + mode);
+		System.out.println("type : " + type);
 		
 		model.addAttribute("mode", mode);
 		model.addAttribute("type", type);
 		
+		System.out.println("===choicePlay() end===");
 		return "intro/choicePlay";
 	}
 	
@@ -50,7 +55,7 @@ public class IntroController {
 	public String choiceRest(Model model) {
 		String type="피로도";
 		String mode = "rest"; 
-		
+		System.out.println("===choiceRest() 호출!===");
 		if (log.isDebugEnabled()) { // 현재 로그객체가 디버그모드상태라면
 			System.out.println("===choice() 호출!===");
 			log.debug("mode : " + mode); // 내부적인 처리과정
@@ -60,14 +65,17 @@ public class IntroController {
 		model.addAttribute("mode", mode);
 		model.addAttribute("type", type);
 		
+		System.out.println("mode : " + mode);
+		System.out.println("type : " + type);
+		System.out.println("===choiceRest() end===");
 		return "intro/choiceRest";
 	}
 
 	@RequestMapping("/playPro.do") 
-	public ModelAndView process(
+	public ModelAndView playPro(
 			@RequestParam(value="mode", defaultValue="") String mode,
 			@RequestParam(value="level", defaultValue="") String level) {
-		
+		System.out.println("===playPro() 호출!===");
 		String type="";
 		String m = mode;
 		
@@ -85,12 +93,63 @@ public class IntroController {
 		int count=courseDao.getCourseCount(map);
 		
 		if (log.isDebugEnabled()) { // 현재 로그객체가 디버그모드상태라면
-			System.out.println("===choicePro() 호출!===");
+			System.out.println("===playPro() 호출!===");
 			log.debug("mode : " + mode); // 내부적인 처리과정
 			log.debug("play : " + play);
 			log.debug("lv : " + lv);
 			log.debug("count : " + count);	
-			System.out.println("===choicePro() end===");
+			System.out.println("===playPro() end===");
+		}
+		
+		ModelAndView mav = new ModelAndView();		
+		mav.setViewName("intro/playPro");
+		mav.addObject("count", count);
+		mav.addObject("type", type);
+		mav.addObject("mode", mode);
+		mav.addObject("level", level);
+		mav.addObject("play", play);
+		mav.addObject("lv", lv);
+		
+		System.out.println("count : " + count);
+		System.out.println("type : " + type);
+		System.out.println("mode : " + mode);
+		System.out.println("level : " + level);
+		System.out.println("play : " + play);
+		System.out.println("lv : " + lv);
+		
+		System.out.println("===playPro() end===");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/restPro.do") 
+	public ModelAndView restPro(
+			@RequestParam(value="mode", defaultValue="") String mode,
+			@RequestParam(value="level", defaultValue="") String level) {
+		System.out.println("===restPro() 호출!===");
+		String type="";
+		String m = mode;
+		
+		switch(m) { 
+		case "rest": type="피로도"; break; 
+		}
+		
+		int lv = Integer.parseInt(level);
+		String play=mode;
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("play", play);
+		map.put("lv", new Integer(lv));
+		
+		int count=courseDao.getCourseCount(map);
+		
+		if (log.isDebugEnabled()) { // 현재 로그객체가 디버그모드상태라면
+			System.out.println("===restPro() 호출!===");
+			log.debug("mode : " + mode); // 내부적인 처리과정
+			log.debug("play : " + play);
+			log.debug("lv : " + lv);
+			log.debug("count : " + count);	
+			System.out.println("===restPro() end===");
 		}
 		
 		ModelAndView mav = new ModelAndView();		
@@ -106,54 +165,8 @@ public class IntroController {
 		System.out.println("mode : " + mode);
 		System.out.println("level : " + level);
 		System.out.println("play : " + play);
-		
-		return mav;
-	}
-	
-	@RequestMapping("/restPro.do") 
-	public ModelAndView proceess(
-			@RequestParam(value="mode", defaultValue="") String mode,
-			@RequestParam(value="level", defaultValue="") String level) {
-		
-		String type="";
-		String m = mode;
-		
-		switch(m) { 
-		case "rest": type="피로도"; break; 
-		}
-		
-		int lv = Integer.parseInt(level);
-		String rest=mode;
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("rest", rest);
-		map.put("lv", new Integer(lv));
-		
-		int count=courseDao.getCourseCount(map);
-		
-		if (log.isDebugEnabled()) { // 현재 로그객체가 디버그모드상태라면
-			System.out.println("===choicePro() 호출!===");
-			log.debug("mode : " + mode); // 내부적인 처리과정
-			log.debug("play : " + rest);
-			log.debug("lv : " + lv);
-			log.debug("count : " + count);	
-			System.out.println("===choicePro() end===");
-		}
-		
-		ModelAndView mav = new ModelAndView();		
-		mav.setViewName("intro/playPro");
-		mav.addObject("count", count);
-		mav.addObject("type", type);
-		mav.addObject("mode", mode);
-		mav.addObject("level", level);
-		mav.addObject("play", rest);
-		
-		System.out.println("count : " + count);
-		System.out.println("type : " + type);
-		System.out.println("mode : " + mode);
-		System.out.println("level : " + level);
-		System.out.println("play : " + rest);
-		
+		System.out.println("lv : " + lv);
+		System.out.println("===restPro() end===");
 		return mav;
 	}
 	

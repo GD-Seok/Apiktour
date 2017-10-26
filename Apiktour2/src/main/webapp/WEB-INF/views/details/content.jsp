@@ -5,10 +5,7 @@
 <%@taglib prefix="spring"  uri="http://www.springframework.org/tags" %>               
 <%@taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>  
  <!Doctype html> 
-      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <link href="<c:url value='/resources/css/result/content.css?ver=1' />" rel="stylesheet"></link>
-<link href="<c:url value='/resources/css/result/module.css?ver=1' />" rel="stylesheet"></link>
-
+ 
 <script>
  // 현재 스크롤바의 위치를 저장하는 변수 (px)
         var currentScrollTop = 0;
