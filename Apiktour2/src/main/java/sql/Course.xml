@@ -35,25 +35,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>	
 	
 	
-	<select id="selectCourseNumList" parameterType="Integer" resultType="courseDto">
-		select c.cosnum, c.lv, l.locnum, m.locname, m.locationx, m.locationy, m.loctype 
-		from COURSE c, COSLOC l, MAP m 
-		where l.locnum=m.locnum and c.cosnum=l.cosnum 
-		and c.cosnum=#{cosnum}
+	<!-- 코스번호 n에 대한 정보, 사이드바에 표현될 영역 -->
+	<select id="selectCourseNumList" parameterType="Integer" resultType="courseVo">
+		select c.cosnum, c.cosname, l.locnum, m.locname, m.locationx, m.locationy, m.loctype, d.address, d.imgname, d.tel, d.time, d.contents 
+		from COURSE c, COSLOC l, MAP m, DETAILS d, ICONTYPE i 
+		where d.locnum=l.locnum   
+		and l.locnum=m.locnum 
+		and c.cosnum=l.cosnum 
+		and m.loctype=i.loctype 
+		and c.cosnum=#{cosnum};
 	</select>	
 	
+	<!-- 코스넘버 n에 해당되는 개수 -->
 	<select id="selectCourseNumCount" parameterType="Integer" resultType="int">
 		select count(*) 
 		from COSLOC where cosnum=#{cosnum}
 	</select>	
- 
+	
+ 	<!-- 코스유형과 레벨에 따른 코스위치, 좌표 -->
  	<select id="selectCourseMarker" parameterType="map" resultType="courseVo">
 	select c.play, c.lv, c.cosnum, c.cosname, l.locnum, m.locname, m.locationx, m.locationy, m.loctype 
 	from COURSE c, COSLOC l, MAP m 
 	where l.locnum=m.locnum and c.cosnum=l.cosnum 
 	and c.play=#{play} and lv=#{lv}
 	</select>
- 
 
  	
  	<!-- 전체 불러오기 -->
