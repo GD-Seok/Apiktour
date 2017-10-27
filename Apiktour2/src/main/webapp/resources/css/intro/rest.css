@@ -1,6 +1,5 @@
 @font-face{
-    font-family:'BusanBada';
-    
+    font-family:'BusanBada';    
     src:url(../../font/intro/BusanBada.ttf) format('truetype');
 }
 
@@ -8,7 +7,7 @@ body{
     background-color: #1B2EE8;
 }
 
-#container{    
+#contain{    
 	font-family: 'BusanBada';    
     text-align: left;    
 }
@@ -16,8 +15,8 @@ body{
 .textOne{
 	height: 50vh;
 	width: 50%;
-	padding-left:15vw;
-	padding-top:140px;  
+	padding-left:28vw;
+	padding-top:170px;  
     animation: scale 1.3s ease-out infinite;
     font-size: 23vw;
     color: #fff;
@@ -25,7 +24,7 @@ body{
 
 #container2{
     position: absolute;
-    left: 45vw;
+    left: 52vw;
     bottom: 20vh;
     font-family: 'BusanBada';
     color: #fff;
@@ -38,7 +37,8 @@ body{
   }
 }
 
-button{
+#rsBtn{
+	border-style:none;
     position: absolute;
     right: 30vh;
     bottom: 7vh;
@@ -50,10 +50,10 @@ button{
     color: #626360;
     border-radius: 3vw;
 	background-color: #fff;
-    padding-top: .5vh;
+    padding-top: .9vh;
 }
 
-button:hover {
+#rsBtn:hover {
     background-color: rgb( 227, 77, 130 );
     color: #fff;
 }

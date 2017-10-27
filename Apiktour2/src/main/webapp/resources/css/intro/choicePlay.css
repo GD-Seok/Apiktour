@@ -1,6 +1,5 @@
 @font-face{
-    font-family:'BusanBada';
- 
+    font-family:'BusanBada'; 
     src:url(../../font/intro/BusanBada.ttf) format('truetype');
 }
 
@@ -22,8 +21,9 @@ label{
 
 /*.vertical{position: absolute;}*/
 
-/* 甕곌쑵�뱣占쎌뒞�⑨옙 */
-button {
+/* �뵓怨뚯뫓占쎈괏�뜝�럩�뮒占썩뫅�삕 */
+#saveBtn {
+	border-style:none;
     position: absolute;
     border-radius: 0.6em;
     background-color: #fff;
@@ -31,21 +31,16 @@ button {
     height: 5vh;
     right: 6vh;
     bottom: 3vh;
-/*display: flex;*/
-/*align-self: center;*/
-/*margin: 100px;*/
-/*padding: 1.2em 2.8em;*/
-/*text-transform: uppercase;*/
-/*overflow: hidden;*/    
-    line-height: .5em;
+ 
+    /* line-height: .5em; */
     color: #89918C;
-    text-decoration: none;
     text-align: center;    
     font-family: 'BusanBada';
     font-size: 1rem;
+    padding-top: 1.5vh;
 }
 
-button:hover{
+#saveBtn:hover{
     background:#89918C;
     color: #fff;  
 }
