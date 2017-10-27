@@ -39,7 +39,7 @@ $( function() {
 			<span class="textThree">선택하셨습니다.</span>
 		</div>
 		<!-- container -->
-		<button id="rsBtn" onclick="location.href='result.jsp'">다음</button>
+		<button id="rsBtn" onclick="location.href='result.jsp'">다  음</button>
 		<input type="hidden" name="mode" id="mode" value="${ rest}">
 	   <input type="hidden" name="level"  id="level"  value="${ level}">
 	   </form>

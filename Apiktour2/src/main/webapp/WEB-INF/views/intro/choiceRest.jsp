@@ -41,7 +41,7 @@
 %>
 <div id="wrapp">
 	<form method="post" action="restPro.do">
-		<div id="container">
+		<div id="contain">
 			<p>
 				<label for="amount">현재,<br> 당신의<br> 컨디션을<br>	선택하세요.</label>
 			</p>
@@ -52,7 +52,7 @@
 
 			<!--여기까지-->
 			<!--<div id="slider"></div>-->
-			<button id="saveBtn" onclick="location.href='restPro.jsp'"><p>다음</p></button>
+			<button id="saveBtn" onclick="location.href='restPro.jsp'"><p>다  음</p></button>
 		</div>
 	</form>
 		<!-- container -->
