@@ -58,38 +58,8 @@
     </p>    
     <div id="wrap_api"> 
 <%-- <c:forEach var="cosinfo" items="${cosnumList }">   --%>
-    <div class="list">
-            <div class="api_title">
-                <span class="dot"></span>
-                <h3 class="fpx16 fw_6">노리매 공원</h3>
-            </div>
-            <div class="api_content line_left line_h">
-                <div class="list_info">           
-                    <div>
-                    <p class="api_img">
-                    	<img src="${pageContext.request.contextPath}/resources/upload/img/111.jpg" alt="getLocname()">
-                    </p>
-	                    <table class="api_summery">
-	                    	<tbody>
-	                    	<tr>
-	                    	<th class="api_th">주소</th>
-	                    	<td class="api_td">제주특별자치도 서귀포시 대정읍 중산간서로 2260-15</td>
-	                    	</tr>
-	                    	<tr>
-	                    	<th class="api_th">연락처</th>
-	                    	<td class="api_td">064-792-8211</td>
-	                    	</tr>
-	                    	<tr>
-	                    	<th class="api_th">운영시간</th>
-	                    	<td class="api_td">09:00~18:00 폐장 1시간 전 입장마감</td>
-	                    	</tr>   
-	                    	</tbody>                 	
-	                    </table>               
-                    </div>
-                </div><!-- list_info -->
-            </div><!-- api_content -->          
-        </div> <!-- list -->   
-        
+
+ 
          <div class="list">
             <div class="api_title">
                 <span class="dot"></span>
@@ -124,6 +94,39 @@
         </div> <!-- list -->   
         
         
+
+    <div class="list">
+            <div class="api_title">
+                <span class="dot"></span>
+                <h3 class="fpx16 fw_6">노리매 공원</h3>
+            </div>
+            <div class="api_content line_left line_h">
+                <div class="list_info">           
+                    <div>
+                    <p class="api_img">
+                    	<img src="${pageContext.request.contextPath}/resources/upload/img/111.jpg" alt="getLocname()">
+                    </p>
+	                    <table class="api_summery">
+	                    	<tbody>
+	                    	<tr>
+	                    	<th class="api_th">주소</th>
+	                    	<td class="api_td">제주특별자치도 서귀포시 대정읍 중산간서로 2260-15</td>
+	                    	</tr>
+	                    	<tr>
+	                    	<th class="api_th">연락처</th>
+	                    	<td class="api_td">064-792-8211</td>
+	                    	</tr>
+	                    	<tr>
+	                    	<th class="api_th">운영시간</th>
+	                    	<td class="api_td">09:00~18:00 폐장 1시간 전 입장마감</td>
+	                    	</tr>   
+	                    	</tbody>                 	
+	                    </table>               
+                    </div>
+                </div><!-- list_info -->
+            </div><!-- api_content -->          
+        </div> <!-- list -->   
+       
          <div class="list">
             <div class="api_title">
                 <span class="dot"></span>

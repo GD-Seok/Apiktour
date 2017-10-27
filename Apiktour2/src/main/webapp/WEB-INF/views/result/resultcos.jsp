@@ -159,11 +159,10 @@ $(document).ready(function() {
 
 
 
-
 <script>   
-var initloc = {lat: 33.306090, lng: 126.289434};
+var initloc = {lat: 33.369621, lng: 126.538110};
 var mapContainer = document.getElementById('map'), 
-mapOption = {zoom: 12, center: initloc, mapTypeId: 'roadmap'};
+mapOption = {zoom: 11, center: initloc, mapTypeId: 'roadmap'};
 var map = new google.maps.Map(mapContainer, mapOption);
 
 var icons = {
@@ -197,37 +196,61 @@ var icons = {
        };
   */
  
-var features = [
-{ position: new google.maps.LatLng(33.306090, 126.289434),
-  type: 'amuse' }, 
-{ position: new google.maps.LatLng(33.389523, 126.239259),
-  type: 'food' }, 
-{ position: new google.maps.LatLng(33.459974, 126.831469),
-  type: 'land' }, 
-{ position: new google.maps.LatLng(33.262067, 126.275559),
-  type: 'cafe' },
-{ position: new google.maps.LatLng(33.254923, 126.408718),
-  type: 'party' }
-    ];
-// Create markers.
- features.forEach(function(feature) {
-          var marker = new google.maps.Marker({
-            position: feature.position,
-            icon: icons[feature.type].icon,
-            animation: google.maps.Animation.DROP,
-            size: new google.maps.Size(20, 32),
-            map: map
-          });
-        });
-        
-        
-        
-//marker.setMap(map);
-google.maps.event.addDomListener(window, 'load');
-    
 
-    
+	var features = [ {
+		position : new google.maps.LatLng(33.306090, 126.289434),
+		type : 'amuse'
+	}, {
+		position : new google.maps.LatLng(33.389523, 126.239259),
+		type : 'food'
+	}, {
+		position : new google.maps.LatLng(33.459974, 126.831469),
+		type : 'land'
+	}, {
+		position : new google.maps.LatLng(33.262067, 126.275559),
+		type : 'cafe'
+	}, {
+		position : new google.maps.LatLng(33.254923, 126.408718),
+		type : 'party'
+	},
+	{
+		position : new google.maps.LatLng(33.254923, 126.408718),
+		type : 'amuse'
+	}, {
+		position : new google.maps.LatLng(33.165663, 126.273467),
+		type : 'land'
+	}, {
+		position : new google.maps.LatLng(33.236816, 126.437067),
+		type : 'cafe'
+	},
+	{
+		position : new google.maps.LatLng(33.245014, 126.411631),
+		type : 'food'
+	}, {
+		position : new google.maps.LatLng(33.462459, 126.309590),
+		type : 'land'
+	}, {
+		position : new google.maps.LatLng(33.262067, 126.275559),
+		type : 'cafe'
+	}, {
+		position : new google.maps.LatLng(33.423540, 126.929326),
+		type : 'party'
+	}
+	
+	];
+	// Create markers.
+	features.forEach(function(feature) {
+		var marker = new google.maps.Marker({
+			position : feature.position,
+			icon : icons[feature.type].icon,
+			animation : google.maps.Animation.DROP,
+			size : new google.maps.Size(20, 32),
+			map : map
+		});
+	});
 
+	//marker.setMap(map);
+	google.maps.event.addDomListener(window, 'load');
 </script>
 
 <script type="text/javascript">
