@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.apik.map.command.MapCommand;
 import com.apik.map.dao.MapDAO;
-import com.apik.person.command.PersonCommand;
-import com.apik.person.dao.PersonDAO;
 
 @Controller
 public class InsertmapController {

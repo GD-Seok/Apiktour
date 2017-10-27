@@ -44,7 +44,7 @@ public class UpdatepersonController {
 		listperson = personDto;
 		
 		personDao.updateperson(listperson);
-		System.out.println("회원 정보 수정 됨");
+		System.out.println("지도 장소 정보 수정 됨");
 		
 		ModelAndView mav = new ModelAndView();
 		

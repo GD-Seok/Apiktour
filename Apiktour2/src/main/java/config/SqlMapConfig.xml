@@ -13,16 +13,15 @@
  		<typeAlias type="com.apik.person.command.PersonCommand" alias="personDto"/> 		
  	</typeAliases>
  	
-<!--
-	 		<mapper resource="sql/Cosloc.xml"/>
- 		<mapper resource="sql/Course.xml"/>
- 		<mapper resource="sql/Icontype.xml"/>
+<!--	
  		<mapper resource="sql/Liket.xml"/>
  		<mapper resource="sql/Login.xml"/>
- 		<mapper resource="sql/Map.xml"/> 
  -->
  	<mappers>
  		<mapper resource="sql/Person.xml"/>
  		<mapper resource="sql/Course.xml"/>
+ 		<mapper resource="sql/Map.xml"/>
+ 		<mapper resource="sql/Icontype.xml"/>
+ 		<mapper resource="sql/Cosloc.xml"/>	
  	</mappers>
  </configuration>

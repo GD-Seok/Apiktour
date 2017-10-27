@@ -8,8 +8,43 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		locnum (f)   Interger(3)  지도 id 값 
 	 -->
 
-	<!-- 코스에 따른 장소 정보 검색 -->
-	<!-- 코스에 따른 장소 정보 등록 -->
-	<!-- 코스에 따른 장소 정보 수정 -->
-	<!-- 코스에 따른 장소 정보 삭제 -->
+	<!-- pseron 테이블에서 SQL 작업 -->
+	<!-- 전체 불러오기 -->
+	<select id="listcosloc" resultType="coslocDto">
+		select * from COSLOC order by cosnum desc
+	</select>
+	
+	<select id="countcosloc" resultType="Integer">
+		select count(*) from COSLOC
+    </select> 
+    
+    <!-- 상세보기 -->
+    <select id="detailscosloc" parameterType="coslocDto" resultType="coslocDto">
+    	select * from COSLOC where cosnum=#{cosnum} and locnum=#{locnum}
+    </select>
+	
+	<!-- 코스 장소 검색 -->
+	<select id="searchcosloc" parameterType="coslocDto" resultType="coslocDto">
+		select * from COSLOC where ${keyField} LIKE '%${keyWord}%'					
+	</select>
+	
+	<!-- 검색된 코스 장소 수  -->
+	<select id="countsearchcosloc" parameterType="coslocDto" resultType="Integer">
+		select count(*) from COSLOC where ${keyField} LIKE '%${keyWord}%' 
+	</select>
+	
+	<!-- 코스 장소등록 -->
+	<insert id="insertcosloc" parameterType="coslocDto">
+		insert into COSLOC values(#{cosnum},#{locnum})
+	</insert>
+	
+	<!-- 코스 장소 수정 -->
+	<update id="updatecosloc" parameterType="coslocDto">
+		update COSLOC set cosnum=#{cosnum},locnum=#{locnum} where cosnum=#{cosnum} and locnum=#{locnum}
+	</update>
+	
+	<!-- 코스 장소 삭제 -->
+	<delete id="deletecosloc" parameterType="coslocDto">
+		delete from COSLOC where cosnum=#{cosnum} and locnum=#{locnum}
+	</delete>
 </mapper>

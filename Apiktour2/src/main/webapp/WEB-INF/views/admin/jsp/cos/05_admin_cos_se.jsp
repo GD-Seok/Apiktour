@@ -28,9 +28,12 @@
 			<input type = "button" value="코스 등록" onclick="location.href='05_admin_cos_in.do'">
 		</td>
 	</tr>
+	<tr>
+		<td>총 코스 수 : ${count}</td>
+	</tr>
 	
 	<tr bgcolor="#F3F3F3">
-		<td width="50">id</td>		
+		<td width="100">id</td>		
 		<td width="100">쉴래? 놀래?</td>
 		<td>코스명</td>
 		<td width="50">Level</td>

@@ -28,17 +28,17 @@
 		<tr>
 			<td align="center" valign="middle" bgcolor="#FFFFCC">
 				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="Insertmap.do">
+					<form name="regForm" method="post" action="insertmap.do">
 						<tr align="center" bgcolor="#996600">
 							<td colspan="3"><font color="#FFFFFF"><b>지도 등록
 										페이지</b></font></td>
 						</tr>
 						<tr>
-							<td width="16%">등록할 지도 id 값 (자동)</td>
+							<td width="16%">등록할 지도 id 값 (자동 등록)</td>
 							<td width="57%"><input type="text" name="locnum" size="15">
 								<input type="button" value="지도 id 자동등록"
 								onClick="idCheck(this.form.id.value)"></td>
-							<td width="27%">등록하시려면 버튼을 눌러주세요</td>
+							<td width="27%">버튼을 눌러 자동 등록 해주세요</td>
 						</tr>
 						<tr>
 							<td>장소명</td>

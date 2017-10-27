@@ -1,15 +1,12 @@
 package com.apik.map.service;
 
 import java.util.List;
-import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.dao.DataAccessException;
 
 import com.apik.map.command.MapCommand;
 import com.apik.map.dao.MapDAO;
-import com.apik.person.command.PersonCommand;
-import com.apik.person.dao.PersonDAO;
 
 public class MapDaoImpl extends SqlSessionDaoSupport implements MapDAO {
 	
@@ -18,8 +15,8 @@ public class MapDaoImpl extends SqlSessionDaoSupport implements MapDAO {
 @Override
 	public List<MapCommand> searchmap(MapCommand mapDto) throws DataAccessException {
 		// TODO Auto-generated method stub
-	System.out.println("searchperson 메소드 실행");
-	return getSqlSession().selectList("searchperson",mapDto);
+	System.out.println("searchmap 메소드 실행");
+	return getSqlSession().selectList("searchmap",mapDto);
 	}
 	
 	//회원 목록

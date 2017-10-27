@@ -15,16 +15,16 @@
 	<!-- <bean class="com.apik.admin.admin_cos_se_Controller"/> -->
 	<bean class="com.apik.admin.admin_cos_in_Controller"/>
 	<!-- cosloc 관리 페이지 -->
-	<bean class="com.apik.admin.admin_cosloc_se_Controller"/>
+	<!-- <bean class="com.apik.admin.admin_cosloc_se_Controller"/> -->
 	<bean class="com.apik.admin.admin_cosloc_in_Controller"/>
 	<!-- icon 관리 페이지 -->
-	<bean class="com.apik.admin.admin_icon_se_Controller"/>
+	<!-- <bean class="com.apik.admin.admin_icon_se_Controller"/> -->
 	<bean class="com.apik.admin.admin_icon_in_Controller"/>
 	<!-- member 관리 페이지 -->
 	<!-- <bean class="com.apik.admin.admin_m_se_Controller"/> -->
 	<bean class="com.apik.admin.admin_m_in_Controller"/>	
 	<!-- map 관리 페이지 -->
-	<bean class="com.apik.admin.admin_map_se_Controller"/>
+	<!-- <bean class="com.apik.admin.admin_map_se_Controller"/> -->
 	<bean class="com.apik.admin.admin_map_in_Controller"/>
 	
 	<!-- person 등록 --> 
@@ -52,6 +52,34 @@
 	<bean class="com.apik.course.service.ListcourseController"/>
 	<bean class="com.apik.course.service.SearchcourseController"/>
 	<bean class="com.apik.course.service.UpdatecourseController"/>
+	
+	<!-- map 등록 -->
+	<bean class="com.apik.map.service.DeletemapController"/>
+	<bean class="com.apik.map.service.DetailsmapController"/>
+	<bean class="com.apik.map.service.InsertmapController"/>
+	<bean class="com.apik.map.service.ListmapController"/>
+	<bean class="com.apik.map.service.MapDaoImpl"/>
+	<bean class="com.apik.map.service.SearchmapController"/>
+	<bean class="com.apik.map.service.UpdatemapController"/>
+	
+	<!-- cosloc 등록 -->
+	<bean class="com.apik.cosloc.service.DeletecoslocController"/>
+	<bean class="com.apik.cosloc.service.DetailscoslocController"/>
+	<bean class="com.apik.cosloc.service.InsertcoslocController"/>
+	<bean class="com.apik.cosloc.service.ListcoslocController"/>
+	<bean class="com.apik.cosloc.service.CoslocDaoImpl"/>
+	<bean class="com.apik.cosloc.service.SearchcoslocController"/>
+	<bean class="com.apik.cosloc.service.UpdatecoslocController"/>
+	
+	
+	<!-- icon 등록 -->
+	<bean class="com.apik.icontype.service.DeleteicontypeController"/>
+	<bean class="com.apik.icontype.service.DetailsicontypeController"/>
+	<bean class="com.apik.icontype.service.InserticontypeController"/>
+	<bean class="com.apik.icontype.service.ListicontypeController"/>
+	<bean class="com.apik.icontype.service.IcontypeDaoImpl"/>
+	<bean class="com.apik.icontype.service.SearchicontypeController"/>
+	<bean class="com.apik.icontype.service.UpdateicontypeController"/>
 	
 
 	<!-- 리소스 번들을 이용해서 처리 -->

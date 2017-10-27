@@ -4,7 +4,19 @@
 <html>
 <head>
 <title>코스 장소 관리</title>
-
+<script>
+	function inputCheck() {
+		if (document.getElementsByName("cosnum")[0].value == "") {
+			alert("코스 id값을 입력해주세요");
+			return false;
+		} else if (document.getElementsByName("locnum")[0].value == "") {
+			alert("지도 id 값을 입력해주세요");
+			return false;
+		} else {
+			document.forms.regForm.submit();
+		}
+	}
+</script>
 </head>
 <body onLoad="regForm.id.focus()">
 	<br>
@@ -13,7 +25,7 @@
 		<tr>
 			<td align="center" valign="middle" bgcolor="#FFFFCC">
 				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="mapInsert.jsp">
+					<form name="regForm" method="post" action="insertcosloc.do">
 						<tr align="center" bgcolor="#996600">
 							<td colspan="3"><font color="#FFFFFF"><b>코스 장소 등록
 										페이지</b></font></td>

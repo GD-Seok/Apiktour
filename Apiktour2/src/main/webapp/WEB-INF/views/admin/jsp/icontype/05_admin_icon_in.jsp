@@ -4,7 +4,19 @@
 <html>
 <head>
 <title>장소 Type 관리</title>
-
+<script>
+	function inputCheck() {
+		if (document.getElementsByName("loctype")[0].value == "") {
+			alert("장소 타입를 입력해주세요");
+			return false;
+		} else if (document.getElementsByName("type")[0].value == "") {
+			alert("타입 설명을 입력해주세요");
+			return false;
+		} else {
+			document.forms.regForm.submit();
+		}
+	}
+</script>
 </head>
 <body onLoad="regForm.id.focus()">
 	<br>
@@ -13,7 +25,7 @@
 		<tr>
 			<td align="center" valign="middle" bgcolor="#FFFFCC">
 				<table border="1" cellspacing="0" cellpadding="2" align="center">
-					<form name="regForm" method="post" action="iconInsert.jsp">
+					<form name="regForm" method="post" action="inserticontype.do">
 						<tr align="center" bgcolor="#996600">
 							<td colspan="3"><font color="#FFFFFF"><b>장소 Type 등록
 										페이지</b></font></td>

@@ -26,6 +26,9 @@
 			<input type = "button" value="코스 장소 등록" onclick="location.href='05_admin_cosloc_in.do'">
 		</td>
 	</tr>
+	<tr>
+		<td>총 코스 개수 : ${count }</td>
+	</tr>
 	
 	<tr bgcolor="#F3F3F3">
 		<td width="70">코스 id 값</td>
@@ -37,17 +40,14 @@
 			<td colspan="5" align="center">등록된 게시물이 없습니다.</td>
 		</tr>
 	</c:if>
-	<c:forEach var="article" items="${list}">	
+	<c:forEach var="article" items="${listcosloc}">	
 		<tr>
-			<td align="center">${article.seq}</td>
-			<td><a href="detail.do?seq=${article.seq }">${article.title }</a></td>
-			<td>${article.writer }</td>
-			<td>${article.regdate }</td>
-			<td>${article.hit }</td>
+			<td><a href="detailscosloc.do?cosnum=${article.cosnum }&locnum=${article.locnum}">${article.cosnum }</a></td>
+			<td>${article.locnum }</td>
 		</tr>
 	</c:forEach>
 	
 	<tr>
-		<td align="center" colspan="5">${pagingHtml }</td>
+		<td align="center" colspan="5"></td>
 	</tr>
 </table>

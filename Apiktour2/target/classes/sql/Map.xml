@@ -11,8 +11,46 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		loctype (f) VARCHAR(10)    장소 type값   
 	 -->
 
-	<!-- 지도검색 -->
+	<!-- 전체 불러오기 -->
+	<select id="listmap" resultType="mapDto">
+		select * from MAP order by locnum desc
+	</select>
+	
+	<!-- 전체 개수 -->
+	<select id="countmap" resultType="Integer">
+		select count(*) from MAP
+    </select> 
+    
+    <!-- 상세보기 -->
+    <select id="detailsmap" parameterType="String" resultType="mapDto">
+    	select * from MAP where locnum=#{locnum}
+    </select>
+    
+    <!-- 코스 검색 -->
+	<select id="searchmap" parameterType="mapDto" resultType="mapDto">
+		select * from MAP where ${keyField} LIKE '%${keyWord}%'					
+	</select>
+	
+	<!-- 검색된 코스 수  -->
+	<select id="countsearchmap" parameterType="mapDto" resultType="Integer">
+		select count(*) from MAP where ${keyField} LIKE '%${keyWord}%' 
+	</select>
+    
 	<!-- 지도 등록 -->
+	<insert id="insertmap" parameterType="mapDto">
+		insert into MAP values(#{locnum},#{locname},#{locationx},#{locationy},#{loctype})
+	</insert>
 	<!-- 지도 수정 -->
+	<update id="updatemap" parameterType="mapDto">
+		update MAP set locnum=#{locnum},locname=#{locname},locationx=#{locationx},locationy=#{locationy},loctype=#{loctype} where locnum=#{locnum}
+	</update>
+	
 	<!-- 지도삭제 -->
+	<delete id="deletemap" parameterType="String">
+		delete from COSLOC where locnum=#{locnum};
+		delete from DETAILS where locnum=#{locnum};
+		delete from MAP where locnum=#{locnum};
+	</delete>
+	
+	
 </mapper>

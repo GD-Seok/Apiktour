@@ -8,8 +8,44 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		type        VARCHAR(30)      카페, 박물관, 산 등등 타입 설명 
  	 -->
  
- 	<!-- 장소 type 검색 -->
- 	<!-- 장소 type 등록 -->
- 	<!-- 장소 type 수정 -->
- 	<!-- 장소 type 삭제 -->
+ 	
+ 	<!-- 전체 불러오기 -->
+	<select id="listicontype" resultType="icontypeDto">
+		select * from ICONTYPE order by loctype desc
+	</select>
+	
+	<select id="counticontype" resultType="Integer">
+		select count(*) from ICONTYPE
+    </select> 
+    
+    <!-- 상세보기 -->
+    <select id="detailsicontype" parameterType="String" resultType="icontypeDto">
+    	select * from ICONTYPE where loctype=#{loctype}
+    </select>
+	
+	<!-- 장소 type 검색 -->
+	<select id="searchicontype" parameterType="icontypeDto" resultType="icontypeDto">
+		select * from ICONTYPE where ${keyField} LIKE '%${keyWord}%'					
+	</select>
+	
+	<!-- 검색된 장소 type 수  -->
+	<select id="countsearchicontype" parameterType="icontypeDto" resultType="Integer">
+		select count(*) from ICONTYPE where ${keyField} LIKE '%${keyWord}%' 
+	</select>
+	
+	<!-- 장소 type등록 -->
+	<insert id="inserticontype" parameterType="icontypeDto">
+		insert into ICONTYPE values(#{loctype},#{type})
+	</insert>
+	
+	<!-- 장소 type 수정 -->
+	<update id="updateicontype" parameterType="icontypeDto">
+		update ICONTYPE set loctype=#{loctype},type=#{type} where loctype=#{loctype}
+	</update>
+	
+	<!-- 장소 type 삭제 -->
+	<delete id="deleteicontype" parameterType="String">
+		update MAP set loctype=null where loctype=#{loctype};
+		delete from ICONTYPE where loctype=#{loctype};
+	</delete>
  </mapper>

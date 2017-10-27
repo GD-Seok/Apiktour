@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.apik.map.dao.MapDAO;
-import com.apik.person.dao.PersonDAO;
 
 @Controller
 public class DeletemapController {

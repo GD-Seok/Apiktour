@@ -4,7 +4,7 @@
 <%@page isELIgnored="false" %>
 <table width="600" border="0" cellspacing="0" cellpagging="0" align="center">
 	<tr>
-		<td colspan="2"><h3>회원 정보 </h3></td>	
+		<td colspan="2"><h3>코스 정보 </h3></td>	
 	</tr>
 	<tr>
 		<td>코스 아이디</td>				

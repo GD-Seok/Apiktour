@@ -2,7 +2,7 @@ package com.apik.map.command;
 
 public class MapCommand {
 	private int locnum;
-	private String locnmae,loctype;
+	private String locname,loctype;
 	private double locationx,locationy;
 	
 	//°Ë»ö
@@ -14,11 +14,11 @@ public class MapCommand {
 	public void setLocnum(int locnum) {
 		this.locnum = locnum;
 	}
-	public String getLocnmae() {
-		return locnmae;
+	public String getLocname() {
+		return locname;
 	}
-	public void setLocnmae(String locnmae) {
-		this.locnmae = locnmae;
+	public void setLocname(String locname) {
+		this.locname = locname;
 	}
 	public String getLoctype() {
 		return loctype;

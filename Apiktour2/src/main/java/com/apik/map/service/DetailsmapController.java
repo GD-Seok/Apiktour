@@ -1,8 +1,5 @@
 package com.apik.map.service;
 
-import java.util.Collections;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.apik.map.command.MapCommand;
 import com.apik.map.dao.MapDAO;
-import com.apik.person.command.PersonCommand;
-import com.apik.person.dao.PersonDAO;
 
 @Controller
 public class DetailsmapController {
@@ -22,7 +17,7 @@ public class DetailsmapController {
 	
 	@RequestMapping("/admin/detailsmap.do")
 	public ModelAndView detailsprocess(@RequestParam("locnum") String locnum) {
-		System.out.println("Detailsperson 동작!");
+		System.out.println("Detailsmap 동작!");
 		System.out.println("선택한 locnum : "+locnum);
 		
 		MapCommand listmap=null;		     

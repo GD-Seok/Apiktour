@@ -13,8 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.apik.map.command.MapCommand;
 import com.apik.map.dao.MapDAO;
-import com.apik.person.command.PersonCommand;
-import com.apik.person.dao.PersonDAO;
 
 @Controller
 public class ListmapController {

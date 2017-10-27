@@ -13,6 +13,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- Login SQL -->
 	<!-- admin Table에서 해당하는 id와, passwd가 일치하는지 검색 -->
 	<select id="loginadmin">
-		select count(id) from admin where id=#{id}
+		select count(id) from ADMIN where id=#{id}
 	</select>
 </mapper>

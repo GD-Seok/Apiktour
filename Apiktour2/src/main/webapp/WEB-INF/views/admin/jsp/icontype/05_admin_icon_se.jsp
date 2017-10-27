@@ -7,8 +7,8 @@
 		<tr>
 			<td align="center">
 				<select name="keyField">
-					<option value="loctype">장소타입</option>
-					<option value="type">타입 정보</option>
+					<option value="loctype">장소 타입</option>
+					<option value="type">장소 정보</option>
 				</select>
 			</td>
 			<td>
@@ -26,10 +26,13 @@
 			<input type = "button" value="아이콘 등록" onclick="location.href='05_admin_icon_in.do'">
 		</td>
 	</tr>
+	<tr>
+		<td>총 아이콘 개수 : ${count}</td>
+	</tr>
 	
 	<tr bgcolor="#F3F3F3">
-		<td width="70">장소타입</td>
-		<td width="70">타입 정보</td>
+		<td width="100">장소 타입</td>
+		<td width="70">장소 정보</td>
 	</tr>
 	<!-- 데이터의 유무에 따라서 -->
 	<c:if test="${count==0}">
@@ -37,17 +40,14 @@
 			<td colspan="5" align="center">등록된 게시물이 없습니다.</td>
 		</tr>
 	</c:if>
-	<c:forEach var="article" items="${list}">	
+	<c:forEach var="article" items="${listicontype}">	
 		<tr>
-			<td align="center">${article.seq}</td>
-			<td><a href="detail.do?seq=${article.seq }">${article.title }</a></td>
-			<td>${article.writer }</td>
-			<td>${article.regdate }</td>
-			<td>${article.hit }</td>
+			<td><a href="detailsicontype.do?loctype=${article.loctype }">${article.loctype }</a></td>
+			<td>${article.type }</td>
 		</tr>
 	</c:forEach>
 	
 	<tr>
-		<td align="center" colspan="5">${pagingHtml }</td>
+		<td align="center" colspan="5"></td>
 	</tr>
 </table>
