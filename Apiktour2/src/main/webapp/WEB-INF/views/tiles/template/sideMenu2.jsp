@@ -10,7 +10,7 @@
         </div>       
          
         <ul class="menu">
-        	<li> ${id }님 환영합니다!</li>
+        	<li> <a style="color:'white'">${id }님<br>환영합니다!</a></li>
             <li> <a href="${pageContext.request.contextPath}/login.do?id=${id}&passwd=${passwd}">홈으로가기</a></li>
             <li> <a href="#">나의 위시 리스트</a> </li>
             <li> <a href="#">회원수정</a> </li>
