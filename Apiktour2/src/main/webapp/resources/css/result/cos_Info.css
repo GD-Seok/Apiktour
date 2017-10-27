@@ -1,5 +1,6 @@
 @CHARSET "UTF-8"; 
 
+
 /*module*/
 .txt_none{text-indent: -9999px;}
 .mg_center{margin: 0 auto;}
@@ -145,6 +146,16 @@ span.like > a > #btn_like:hover  {
     fill:pink;
     
 }
+
+span.like > a > #btn_like:active{
+    fill:pink;
+}
+
+span.like > a > #btn_like:checked{
+    fill:pink;
+}
+
+
 
 
 p.memo{ background-color: antiquewhite;

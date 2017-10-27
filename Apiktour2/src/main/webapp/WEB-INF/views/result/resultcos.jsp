@@ -35,12 +35,14 @@ $(function(){
     $('#mode option').each(function(){
         if($(this).val()==mode){
           $(this).attr("selected","selected"); // attr적용안될경우 prop으로
+          $(this).find('option:selected').css('background-color', '#29abe2');
         }
       });
     
     $('#level option').each(function(){
         if($(this).val()==level){
           $(this).attr("selected","selected"); // attr적용안될경우 prop으로
+          $(this).find('option:selected').css('background-color', '#29abe2');
         }
       });
     
@@ -76,17 +78,19 @@ $(document).ready(function() {
             margin: 0 auto;
         }
 
-        .slick-slide { /* background-color: #333; */
+        .slick-slide { background-color: #fff;
           height: 70px; /*width: 300px !important;*/
           width: 100%;
           margin: 0px 3px;
           border: 2px solid #ccc;
           border-radius: 3px;
         }
-        
+	
+			        
          .cosbox{
             background-color: #111;
             overflow: hidden;
+            padding-top:30px;
             
         }
         
@@ -94,6 +98,7 @@ $(document).ready(function() {
         color:#fff;
         }
         
+	
         
 
         </style>
@@ -121,7 +126,7 @@ $(document).ready(function() {
          <option value="5">5Lv</option>
         </select>
 
-      		<button id="redi">선택</button>
+      		<button class="btn_select" id="redi">선택</button>
       	</form>
      </div>
      
@@ -133,12 +138,14 @@ $(document).ready(function() {
 			
 				<c:forEach var="cos" items="${cosList }">  
 					<div>
+					<c:set var="cosboximg" value="${ cos.getPlay() }_00${ cos.getCosnum() }_0${ cos.getLv() }" />
 					<p class="cosbox">
 				   	<a class="flexCol CosInfo clickev txtc" href="#">
-				   		${ cos.getCosname() }, 
-				   		<span class="cosnum">${ cos.getCosnum() }</span><br>			   		
+				   		${ cos.getCosname() }
+				   		<%-- <span class="cosnum"> ${ cos.getPlay() }_00${ cos.getCosnum() }_0${ cos.getLv() }</span><br> --%>			   		
 				   	</a>
-				   	<img class="cosimg" src="${pageContext.request.contextPath}/resources/upload/img/333.jpg" alt="img">
+				   	
+				   	<img class="cosimg" src="${pageContext.request.contextPath}/resources/upload/cosbox/${cosboximg }.jpg" alt="img">
 				   	</p>
 				   	
 				   	</div>
@@ -160,36 +167,65 @@ mapOption = {zoom: 12, center: initloc, mapTypeId: 'roadmap'};
 var map = new google.maps.Map(mapContainer, mapOption);
 
 var icons = {
-    offmarker: {
-    icon: '../../images/icon/icn_maker_off.png'
+    cafe: {
+    	icon: '${pageContext.request.contextPath}/resources/images/marker/m_cafe.png',
     },
-    onmarker: {
-    icon: '${pageContext.request.contextPath}/web/images/icon/icn_maker_on.png'
-    }  
+    food: {
+   		icon: '${pageContext.request.contextPath}/resources/images/marker/m_food.png'
+    },
+    amuse: {
+        icon: '${pageContext.request.contextPath}/resources/images/marker/m_amuse.png'
+    },
+    land: {
+    	icon: '${pageContext.request.contextPath}/resources/images/marker/m_land.png'
+        },
+    party: {
+    	icon: '${pageContext.request.contextPath}/resources/images/marker/m_party.png'
+        }
 };
+ 
 
-
+ 
+/*  var image = {
+         url: '${pageContext.request.contextPath}/resources/images/marker/m_cafe.svg',
+         // This marker is 20 pixels wide by 32 pixels high.
+         size: new google.maps.Size(20, 32),
+         // The origin for this image is (0, 0).
+         origin: new google.maps.Point(0, 0),
+         // The anchor for this image is the base of the flagpole at (0, 32).
+         anchor: new google.maps.Point(0, 32)
+       };
+  */
+ 
 var features = [
 { position: new google.maps.LatLng(33.306090, 126.289434),
-  type: 'offmarker' }, 
+  type: 'amuse' }, 
 { position: new google.maps.LatLng(33.389523, 126.239259),
-  type: 'offmarker' }, 
+  type: 'food' }, 
 { position: new google.maps.LatLng(33.459974, 126.831469),
-  type: 'offmarker' }, 
+  type: 'land' }, 
 { position: new google.maps.LatLng(33.262067, 126.275559),
-  type: 'offmarker' },
+  type: 'cafe' },
 { position: new google.maps.LatLng(33.254923, 126.408718),
-  type: 'onmarker' }
+  type: 'party' }
     ];
 // Create markers.
  features.forEach(function(feature) {
           var marker = new google.maps.Marker({
             position: feature.position,
+            icon: icons[feature.type].icon,
+            animation: google.maps.Animation.DROP,
+            size: new google.maps.Size(20, 32),
             map: map
           });
         });
+        
+        
+        
 //marker.setMap(map);
 google.maps.event.addDomListener(window, 'load');
+    
+
     
 
 </script>

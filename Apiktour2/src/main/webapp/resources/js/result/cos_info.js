@@ -2,7 +2,7 @@
      var aa='제이쿼리 작동 cos_info.js';  
     //alert(aa)
     
-    $(".clickev").click(function () { 
+    $(".cosbox").click(function () { 
     	//alert('hello')
     	var cosname=$(this).text();
     	//alert(cosname)
@@ -35,23 +35,6 @@
     });  
 
 
-    var cnt = $('.cosnum').length;
-    alert(cnt);
-    
-    $('.cosnum').each(function(index,item){
-    	alert(index)
-        console.log("index" + index);
-
-        console.log("item" + item);
-
-        console.log("innerHTML"+item.innerHTML);       
-
-    })
-
-
-
-출처: http://javafactory.tistory.com/1173 [FreeLife의 저장소]
-    
     
    /* 
     switch (cnt) {

@@ -4,6 +4,12 @@ html,body{
             width: 100%;
             overflow: hidden;
         }
+        
+               
+    textarea:focus, input:focus, a:focus, button:focus{
+    outline: none;
+    }        
+    
 
         #wrap{ /*background-color: darksalmon;*/
             height: 100%;
@@ -35,22 +41,41 @@ html,body{
             }
 	
         
-        #filter{ background-color: #eee;
+        #filter{ background-color: #fff;
         position: absolute;
         top: 10px; left: 100px;
         z-index: 3;
-        width: 300px; height: 30px;
+        width: 320px; height: auto;
+            padding: 5px 10px 5px 10px;;
             border-radius: 5px;
             border: 1px solid #ccc;
-            
+            vertical-align: middle;
 }
 
 select{
     width: 120px; height: 28px;
     background: rgba(0,0,0,0);
-    border: 1px solid #ccc;
+    border: 1px solid #29abe2;
     vertical-align: middle;
+    border-radius: 5px;
 }
+
+.btn_select{
+    background-color: #333;
+    border-radius: 5px;
+    width: 60px; height: 28px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    margin-top: 3px;
+}
+
+.btn_select:hover{
+    background-color: dodgerblue;
+    color: #fff;
+}
+
+
 
         #cosListContainer{ /*background-color: aquamarine;*/
           position: absolute;
@@ -77,13 +102,16 @@ select{
             text-align: center;
         }
 
-        #cosList > div a:hover{
-            background-color: rgba(0, 0, 0, 0.3);
+
+        #cosList > div p:hover{
+            background-color: rgba(0, 0, 0, 0.7);
+            cursor: pointer;
         }
 
         
+
        
-		        .cosimg{
+		   .cosimg{
 		    width: 100%; 
 		    display:block;
 		    background-size: contain;
@@ -184,5 +212,3 @@ select{
             transition: background-color .5s;
             text-indent: -9999px;
         }
-
-.flex_txt{ display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; text-align: center; -ms-flex-flow: column nowrap; flex-flow: column nowrap;}

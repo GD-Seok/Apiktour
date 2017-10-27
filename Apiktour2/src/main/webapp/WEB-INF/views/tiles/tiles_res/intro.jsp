@@ -3,4 +3,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
-  
+<link href="<c:url value='/resources/css/common/focusremove.css?ver=1' />" rel="stylesheet"></link>

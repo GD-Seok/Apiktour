@@ -10,6 +10,12 @@
 	padding:0; 
 }
 
+
+    textarea:focus, input:focus, a:focus, button:focus{
+    outline: none;
+    }        
+    
+
 a{text-decoration: none; color: #818181;}
 
 #wrap{/* background-color:#fff; */}
@@ -29,7 +35,7 @@ a{text-decoration: none; color: #818181;}
 
 
 #navIcn{
-    background:url('../../images/btn/btn_logo.png') no-repeat;
+    background:url('../../images/btn/btn_logo.png') top left no-repeat;
     background-size: cover;    
     display: block;    
     position: fixed;
@@ -43,13 +49,10 @@ a{text-decoration: none; color: #818181;}
 }
 
 #navIcn:hover{cursor:pointer;
-background-image: none !important;
-background-color:red;
-content : "&#9776";
+background: url('../../images/btn/btn_menu_over.png') no-repeat !important;
+     background-size: 80%;  
+     width: 7vh; height: 7vh;
 z-index: 50;
-border-radius: 15px;
-
-
 }
 
 
