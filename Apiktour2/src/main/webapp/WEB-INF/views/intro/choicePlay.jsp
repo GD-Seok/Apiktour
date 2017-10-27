@@ -41,18 +41,19 @@
 %>
 <div id="wrapp">
 	<form method="post" action="playPro.do">
-		<div id="contain">
+		<div id="container">
 			<p>
 				<label for="amount">현재,<br> 당신의<br> 에너지을<br>	선택하세요.</label>
 			</p>
 			<div class="stuff">
 				<main><div id="flat-slider-vertical-1"></div></main>
+				<input type="hidden" name="mode" id="mode" value="${ mode}">
 				<input type="hidden" name="level" value="" id="level">
 			</div>
 
 			<!--여기까지-->
 			<!--<div id="slider"></div>-->
-			<button id="saveBtn" onclick="location.href='playPro.jsp'"><p>다  음</p></button>
+			<button id="saveBtn" onclick="location.href='playPro.jsp'"><p>다음</p></button>
 		</div>
 	</form>
 		<!-- container -->

@@ -13,8 +13,8 @@
 $( function() {
     $('#rsBtn').click(function(){
     	var level=$( "#level" ).val();
-		var mode=$('#rest').val();
-		var count=$('#count').val();
+		var mode=$('#mode').val();
+		//var count=$('#count').val();
 
 		$('#parameter').attr('action','${pageContext.request.contextPath}/resultcos.do').submit();
 		return true;//전송이 가능하게 설정		
@@ -39,8 +39,8 @@ $( function() {
 			<span class="textThree">선택하셨습니다.</span>
 		</div>
 		<!-- container -->
-		<button id="rsBtn" onclick="location.href='result.jsp'">다  음</button>
-		<input type="hidden" name="mode" id="mode" value="${ rest}">
+		<button id="rsBtn" onclick="location.href='result.jsp'">다음</button>
+		<input type="hidden" name="mode" id="mode" value="${ mode}">
 	   <input type="hidden" name="level"  id="level"  value="${ level}">
 	   </form>
 	</div> <!-- wrap-->
